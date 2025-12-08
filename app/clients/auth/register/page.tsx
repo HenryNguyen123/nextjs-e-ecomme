@@ -1,13 +1,13 @@
-'use client'
 import React from "react"
-const Footer: React.FC = () => {
+
+const Register: React.FC = () => {
 
     return(
         <>
             <div>
-                <h2>footer</h2>
+                <h1>register</h1>
             </div>
         </>
     )
 }
-export default Footer
+export default Register

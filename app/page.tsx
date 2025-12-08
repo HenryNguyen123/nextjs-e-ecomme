@@ -1,5 +1,4 @@
 import Layout from "@/app/layouts/Layout";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,7 +7,7 @@ export default function Home() {
         <Layout>
           <div>
             <h1>
-              Ủa?  sao năm nay e ăn 12 trái nho dưới gầm bàn vậy? mình ăn trên bàn cũng được mà?
+              home
             </h1>
           </div>
         </Layout>
