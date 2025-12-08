@@ -4,7 +4,11 @@ const Footer: React.FC = () => {
 
     return(
         <>
-            <div>Footer</div>
+            <div>
+                <h2>
+                    Lên bàn ăn đi e!!!!
+                </h2>
+            </div>
         </>
     )
 }

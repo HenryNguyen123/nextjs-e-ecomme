@@ -6,7 +6,11 @@ export default function Home() {
     <>
       <div>
         <Layout>
-          <div>home</div>
+          <div>
+            <h1>
+              Ủa?  sao năm nay e ăn 12 trái nho dưới gầm bàn vậy? mình ăn trên bàn cũng được mà?
+            </h1>
+          </div>
         </Layout>
       </div>
     </>
