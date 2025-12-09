@@ -6,9 +6,7 @@ export default function Home() {
       <div>
         <Layout>
           <div>
-            <h1>
-              home
-            </h1>
+
           </div>
         </Layout>
       </div>
