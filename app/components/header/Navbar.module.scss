@@ -5,6 +5,17 @@
 
 }
 
+#loginItem{
+    font-weight: 500;
+    &:hover {
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(206, 10, 10, 0.2);
+        background: linear-gradient(115deg, #ffcff8, #fac8e7, #e7bbff, #fd93ff);
+        color: #ec2ea9;
+        scale: 1.05;
+        transition: all 0.25s ease;
+    }
+}
 
 
 @keyframes gradientShift {

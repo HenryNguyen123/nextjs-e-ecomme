@@ -4,17 +4,63 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import style from './Navbar.module.scss'
+import { useDispatch, useSelector } from "react-redux"
+import type {RootState, AppDispatch} from '../../redux/stores/stores.redux'
+import {getLogin} from '../../redux/slices/account/account.slice'
+import type {UserData} from '../../redux/slices/account/account.slice'
+import {logoutAuthentication} from '../../redux/slices/auth/logout.slice'
+import { useRouter } from "next/navigation"
 
 export default function NavbarComponent() {
-  const [dropdownOpen, setDropdownOpen] = useState(false); // dropdown click
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dark, setDark] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const router = useRouter()
+  const dispatch = useDispatch<AppDispatch>()
+
+  const isLogin: boolean = useSelector((state: RootState) => state.account.isLogin)
+  const data: UserData | null= useSelector((state: RootState) => state.account.data)
+  const avatarUrl: string | null = data?.data.avatar ? data.data.avatar  : ""
+
+  //logout
+  const checkIsLogin: boolean = useSelector((state: RootState) => state.logout.isLogin) 
 
   const toggleDark = () => {
     setDark(!dark);
     document.documentElement.classList.toggle("dark");
   };
+
+  const handleCallAuthen = async () => {
+      try {
+         await dispatch(getLogin())
+      } catch (error) {
+          console.error("Auth check failed:", error)
+      }
+  }
+
+  const handleLogoutUser = async() => {
+      try {
+          const pathPage = window.location.pathname
+          const data = await dispatch(logoutAuthentication(pathPage)).unwrap()
+          if (data.EC === 0 && data.DT) {
+              router.push(data.DT.path)
+              return window.location.reload()
+          } 
+      } catch (error) {
+          console.log(error)
+      }
+  }
+
+  const handleClickLogin = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      e.preventDefault()
+      router.push('/clients/auth/login')
+  }
+
+  useEffect(() => {
+      handleCallAuthen()
+  }, [])
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -33,7 +79,7 @@ export default function NavbarComponent() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="no-underline! text-2xl font-bold text-blue-600 dark:text-blue-400">
+          <Link href="/" className="no-underline! text-2xl text-white font-bold text-white-600 dark:text-blue-400">
             MinhNhatShop
           </Link>
 
@@ -66,41 +112,55 @@ export default function NavbarComponent() {
             </Link>
 
             {/* Avatar Dropdown */}
-            <div
-              ref={dropdownRef}
-              className="relative inline-block"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              {/* Avatar */}
-              <Image
-                src="/images/users/avatar/avatar_anonymous.png"
-                alt="User"
-                width={40}
-                height={40}
-                className="w-10 h-10 rounded-full cursor-pointer border"
-              />
+            {
+              data && (
+                <div
+                  ref={dropdownRef}
+                  className="relative inline-block"
+                  onMouseEnter={() => setDropdownOpen(true)}
+                  onMouseLeave={() => setDropdownOpen(false)}
+                >
+                  {/* Avatar */}
+                  <Image
+                        src={data?.data.avatar 
+                        ? `${process.env.NEXT_PUBLIC_SERVER_URL}${data.data.avatar}`
+                        : "/images/users/avatar/avatar_anonymous.png"}
+                        alt="avatar"
+                        width={40}
+                        height={40}
+                        className="rounded-circle"
+                  />
 
-              {/* Dropdown */}
-              <div
-                className={`
-                  absolute right-0 w-40 mt-2 bg-white dark:bg-gray-800
-                  border dark:border-gray-700 rounded shadow-md
-                  transition-all duration-200
-                  ${dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"}
-                `}
-              >
-                <Link href="/profile" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-                  Profile
-                </Link>
-                <Link href="/orders" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-                  Orders
-                </Link>
-                <button className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
-                  Logout
-                </button>
-              </div>
-            </div>
+                  {/* Dropdown */}
+                  <div
+                    className={`
+                      absolute right-0 w-40 mt-2 bg-white dark:bg-gray-800
+                      border dark:border-gray-700 rounded shadow-md
+                      transition-all duration-200
+                      ${dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+                    `}
+                  >
+                    <Link href="/profile" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      Profile
+                    </Link>
+                    <Link href="/orders" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      Orders
+                    </Link>
+                    <button 
+                      className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      onClick={handleLogoutUser}
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              )
+            }
+            {
+              !data && (
+                <Link className="no-underline! text-white md:p-2" id={style.loginItem} href="/login" onClick={handleClickLogin}>Login</Link>
+              )
+            }
 
           </div>
 
