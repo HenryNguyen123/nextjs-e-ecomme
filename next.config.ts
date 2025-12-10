@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    // domains: ['api.minhnhatshop.io.vn'],
+    domains: ['api.minhnhatshop.io.vn', 'localhost:6565'],
+  },
 };
 
 export default nextConfig;
