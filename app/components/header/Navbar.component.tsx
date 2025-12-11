@@ -122,7 +122,7 @@ export default function NavbarComponent() {
                   {/* Avatar */}
                   {/* login basic */}
                   {
-                    !data.data.loginBy && (
+                    !data.data.loginBy || data?.data?.loginBy === '' && (
                       <Image
                             src={data?.data.avatar 
                             ? `${process.env.NEXT_PUBLIC_SERVER_URL}${data.data.avatar}`
@@ -136,7 +136,7 @@ export default function NavbarComponent() {
                   }
                   {/* Oauth2 */}
                   {
-                    data.data.loginBy !== '' && (
+                    data?.data?.loginBy !== '' && (
                       <Image
                             src={data?.data.avatar 
                             ? `${data.data.avatar}`
