@@ -31,7 +31,7 @@ const initialState: DataState = {
 }
 
 export const getMeAccountSlice = createSlice({
-  name: 'login',
+  name: 'getMe',
   initialState,
   reducers: {
   },
@@ -43,6 +43,7 @@ export const getMeAccountSlice = createSlice({
         state.isError = false
     })
     .addCase(fetchAccountGetMe.fulfilled, (state, action: PayloadAction<DataResponse>) => {
+        console.log("get me" ,action.payload)
         state.data = action.payload ? action.payload : null
         state.isLoading = false
         state.isError = false

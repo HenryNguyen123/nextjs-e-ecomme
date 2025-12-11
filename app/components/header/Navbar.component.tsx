@@ -22,7 +22,6 @@ export default function NavbarComponent() {
 
   const isLogin: boolean = useSelector((state: RootState) => state.account.isLogin)
   const data: UserData | null= useSelector((state: RootState) => state.account.data)
-  const avatarUrl: string | null = data?.data.avatar ? data.data.avatar  : ""
 
   //logout
   const checkIsLogin: boolean = useSelector((state: RootState) => state.logout.isLogin) 
@@ -53,7 +52,7 @@ export default function NavbarComponent() {
       }
   }
 
-  const handleClickLogin = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleClickLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault()
       router.push('/clients/auth/login')
   }
@@ -121,15 +120,34 @@ export default function NavbarComponent() {
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
                   {/* Avatar */}
-                  <Image
-                        src={data?.data.avatar 
-                        ? `${process.env.NEXT_PUBLIC_SERVER_URL}${data.data.avatar}`
-                        : "/images/users/avatar/avatar_anonymous.png"}
-                        alt="avatar"
-                        width={40}
-                        height={40}
-                        className="rounded-circle"
-                  />
+                  {/* login basic */}
+                  {
+                    !data.data.loginBy && (
+                      <Image
+                            src={data?.data.avatar 
+                            ? `${process.env.NEXT_PUBLIC_SERVER_URL}${data.data.avatar}`
+                            : "/images/users/avatar/avatar_anonymous.png"}
+                            alt="avatar"
+                            width={40}
+                            height={40}
+                            className="rounded-circle"
+                      />
+                    )
+                  }
+                  {/* Oauth2 */}
+                  {
+                    data.data.loginBy !== '' && (
+                      <Image
+                            src={data?.data.avatar 
+                            ? `${data.data.avatar}`
+                            : "/images/users/avatar/avatar_anonymous.png"}
+                            alt="avatar"
+                            width={40}
+                            height={40}
+                            className="rounded-circle"
+                      />
+                    )
+                  }
 
                   {/* Dropdown */}
                   <div
@@ -158,7 +176,7 @@ export default function NavbarComponent() {
             }
             {
               !data && (
-                <Link className="no-underline! text-white md:p-2" id={style.loginItem} href="/login" onClick={handleClickLogin}>Login</Link>
+                <button className="no-underline! text-white md:p-2" id={style.loginItem} type="button" onClick={handleClickLogin}>Login</button>
               )
             }
 
