@@ -103,7 +103,7 @@ export default function NavbarComponent() {
             </button>
 
             {/* Cart */}
-            <Link href="/cart" className="relative no-underline! ">
+            <Link href="#" className="relative no-underline! ">
               <span className="text-2xl">🛒</span>
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-2 rounded-full">
                 3
@@ -158,10 +158,10 @@ export default function NavbarComponent() {
                       ${dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"}
                     `}
                   >
-                    <Link href="/profile" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <Link href="#" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
                       Profile
                     </Link>
-                    <Link href="/orders" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <Link href="#" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
                       Orders
                     </Link>
                     <button 
