@@ -1,3 +1,4 @@
+import RegisterComponent from "@/app/clients/auth/register/register.component"
 import React from "react"
 
 const Register: React.FC = () => {
@@ -5,7 +6,7 @@ const Register: React.FC = () => {
     return(
         <>
             <div>
-                <h1>register</h1>
+                <RegisterComponent/>
             </div>
         </>
     )

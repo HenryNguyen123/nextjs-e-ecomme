@@ -41,7 +41,7 @@ const AccountSlice = createSlice({
       state.data = action.payload.data
       state.isLoading = false
       if(state.isLogin && action.payload) {
-          const dataLogin = {data: action.payload?.data?.data ? action.payload?.data: action.payload?.data}
+          const dataLogin = {data: (action.payload?.data?.data ? action.payload?.data?.data: action.payload?.data)}
           Cookies.set('USER', JSON.stringify(dataLogin), action.payload.rememberUser ? { expires: 7 } : undefined)
       } 
     },

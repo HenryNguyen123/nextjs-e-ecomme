@@ -6,6 +6,7 @@ import sendkMailForgotPasswordReduce from '../slices/forget-password/mailForgetP
 import resetPasswordReduce from '../slices/forget-password/resetPassword.slice'
 import loginOauth2Reduce from '../slices/auth/oauth2.slice'
 import getMeAccountReduce from '../slices/auth/me.slice'
+import registerReducer from '../slices/auth/register.slice'
 
 export const store = configureStore({
   reducer: {
@@ -23,6 +24,9 @@ export const store = configureStore({
     oauth2: loginOauth2Reduce,
     // get me
     getMe: getMeAccountReduce,
+
+    //register
+    register: registerReducer,
 
     //account
     account: accountReduce,
