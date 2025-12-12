@@ -19,7 +19,9 @@ export interface DataState {
 export const fetchAccountGetMe = createAsyncThunk<DataResponse>(
   'auth/me',
   async () => {
-    const response =  await axios.get<DataResponse>(process.env.NEXT_PUBLIC_CALL_ME_ACCOUNT_URL ?? '')
+    const response =  await axios.get<DataResponse>(process.env.NEXT_PUBLIC_CALL_ME_ACCOUNT_URL ?? '', {
+                              withCredentials: true,
+                            })
     return response.data
   }
 )
