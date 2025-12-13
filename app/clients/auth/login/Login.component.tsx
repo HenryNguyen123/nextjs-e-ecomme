@@ -115,7 +115,7 @@ const LoginComponent: React.FC = () => {
     //step: click forgot password
     const handleForgotPassword = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
-        router.push('/clients/auth/fogot-password/check-mail')
+        router.push('/clients/auth/forgot-password/check-mail')
     }
 
     //step: signIn by OAuth2
