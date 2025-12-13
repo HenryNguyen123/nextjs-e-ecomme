@@ -34,7 +34,7 @@ interface valid {
 
 const RegisterComponent: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>()
-    const router = useRouter
+    const router = useRouter()
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
     const [userName, setUsername] = useState<string>('')
@@ -54,7 +54,7 @@ const RegisterComponent: React.FC = () => {
     // const isErrorUser = useSelector((state: RootState) => state.login.isError)
 
     const handleBackLogin = () => {
-        // router.push('/clients/auth/login')
+        router.push('/clients/auth/login')
     }
     useEffect(() => {
         document.title = 'Register';
@@ -162,7 +162,7 @@ const RegisterComponent: React.FC = () => {
             }
             if (EC === 0) {
                 toast.success(EM || "Create new user successfully!");
-                // router.push('/clients/auth/login')
+                router.push('/clients/auth/login')
                 return;
             }
 
@@ -227,6 +227,7 @@ const RegisterComponent: React.FC = () => {
                                         ref={fileInputRef}
                                         onChange={handleOnChangeAvatar}
                                     />
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img src={avatar ? URL.createObjectURL(avatar) : `/images/users/avatar/avatar_anonymous.png`} 
                                         onChange={handleImageCreateUser} alt="avatar image"  className="avatar-image-item"
                                     />

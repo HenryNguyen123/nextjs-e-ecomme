@@ -38,7 +38,7 @@ export const fetchRegister = createAsyncThunk<UserResponse, UserData>(
     formData.append('password', data.password)
     if (data.age) formData.append('age', String(data.age))
     if (data.avatar  instanceof File) formData.append('avatar', data.avatar)
-    const response =  await axios.post<UserResponse>(process.env.VITE_CREATE_USER_URL ?? '',formData, {
+    const response =  await axios.post<UserResponse>(process.env.VITE_CREATE_USER_URL ?? '/auth/register',formData, {
                       headers: { "Content-Type": "multipart/form-data" }
                     })
     return response.data

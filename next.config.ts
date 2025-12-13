@@ -3,7 +3,15 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     // domains: ['api.minhnhatshop.io.vn'],
-    domains: ['api.minhnhatshop.io.vn', 'localhost:6565', "lh3.googleusercontent.com", "platform-lookaside.fbsbx.com"],
+    domains: ['api.minhnhatshop.io.vn', "lh3.googleusercontent.com", "platform-lookaside.fbsbx.com"],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '6565',
+        pathname: '/public/images/avatar/**',
+      },
+    ],
   },
 };
 

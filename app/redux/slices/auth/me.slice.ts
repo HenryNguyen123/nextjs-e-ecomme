@@ -9,19 +9,22 @@ interface DataResponse{
     EC: number
     DT: UserData | null
 }
-
+interface MeType {
+  key: string
+}
 export interface DataState {
     data: DataResponse | null
     isLoading: boolean
     isError: boolean
 }
 
-export const fetchAccountGetMe = createAsyncThunk<DataResponse>(
+export const fetchAccountGetMe = createAsyncThunk<DataResponse, MeType>(
   'auth/me',
-  async () => {
-    const response =  await axios.get<DataResponse>(process.env.NEXT_PUBLIC_CALL_ME_ACCOUNT_URL ?? '', {
-                              withCredentials: true,
-                            })
+  async (data) => {
+    const response =  await axios.post<DataResponse>(process.env.NEXT_PUBLIC_CALL_ME_ACCOUNT_URL ?? '', {key: data.key}, {
+                      withCredentials: true,
+                    })
+    console.log('key:',  data)
     return response.data
   }
 )
