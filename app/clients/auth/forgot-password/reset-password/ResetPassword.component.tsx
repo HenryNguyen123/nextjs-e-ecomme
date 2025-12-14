@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import type {AppDispatch} from '../../../../redux/stores/stores.redux'
 import { useDispatch } from "react-redux";
 import { handelResetPassword } from "../../../../redux/slices/forget-password/resetPassword.slice";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
 interface validType {
@@ -19,6 +19,7 @@ interface validType {
 const ResetPasswordComponent: React.FC = () => {
     const router = useRouter()
     const dispatch = useDispatch<AppDispatch>()
+    const searchParams = useSearchParams()
 
     const [password, setPassword] = useState<string>('')
     const [confirmPassword, setConfirmPassword] = useState<string>('')
@@ -64,9 +65,10 @@ const ResetPasswordComponent: React.FC = () => {
     //step: confirm reset password
     const handleConfirmResetPassword = async () => {
         const check = HandleCheckValid()
+        const key: string = searchParams.get('key') ?? '';
         if (!check) return
         try {
-            const data = await dispatch(handelResetPassword({password: password})).unwrap()
+            const data = await dispatch(handelResetPassword({password: password, key: key})).unwrap()
             if (data && data.EC === 0) {
                 toast.success(data.EM)
                 setTimeout(() => {

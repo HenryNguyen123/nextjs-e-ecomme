@@ -4,6 +4,7 @@ import axios from '../../../configs/axios.config'
 
 interface DataType {
     password: string,
+    key: string,
 }
 
 interface DataResponse{
@@ -21,7 +22,7 @@ export interface DataState {
 export const handelResetPassword = createAsyncThunk<DataResponse, DataType>(
   'reset-password/reset-password',
   async (data) => {
-    const response =  await axios.put<DataResponse>(process.env.NEXT_PUBLIC_RESET_PASSWORD_URL ?? '', {resetPassword: data.password})
+    const response =  await axios.put<DataResponse>(process.env.NEXT_PUBLIC_RESET_PASSWORD_URL ?? '', {resetPassword: data.password, key: data.key})
     return response.data
   }
 )
