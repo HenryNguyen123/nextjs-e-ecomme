@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import type {AppDispatch, RootState} from '../../../../redux/stores/stores.redux'
 import { useDispatch, useSelector } from "react-redux";
 import { sendMailForgotPassword } from "../../../../redux/slices/forget-password/mailForgetPassword.slice";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
@@ -22,6 +22,7 @@ const MailForgotPassword: React.FC = () => {
     
     const [email, setEmail] = useState<string>('')
     const [checkServer, setCheckServer] = useState<boolean>(false)
+    const [checkMaxRate, setCheckMaxRate] = useState<boolean>(false)
     
     const objCheckValid = { isEmail: true }
     const [isCheckvalid, setIsCheckValid] = useState<validType>(objCheckValid)
@@ -59,6 +60,12 @@ const MailForgotPassword: React.FC = () => {
             if (data && data.EC === 0) {
                 toast.success(data.EM)    
                 setCheckServer(true)
+                return
+            }
+            if (data && data.EC === 2) {
+                toast.error (data.EM)    
+                setIsCheckValid({...objCheckValid, isEmail: false})
+                setCheckMaxRate(true)
                 return
             }
             if (data && data.EC !== 0) {
@@ -118,7 +125,7 @@ const MailForgotPassword: React.FC = () => {
                             <button  type="button" 
                                 data-mdb-button-init data-mdb-ripple-init 
                                 className="btn btn-primary btn-block mb-4 button-alert-forgot "
-                                disabled={checkServer}
+                                disabled={ checkMaxRate ? checkMaxRate : checkServer}
                                 onClick={handleToForgetPassword}
                             >
                                     Can you wanto reset password?
