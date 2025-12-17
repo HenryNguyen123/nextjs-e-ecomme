@@ -3,28 +3,28 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import style from './Navbar.module.scss'
-import { useDispatch, useSelector } from "react-redux"
-import type {RootState, AppDispatch} from '../../redux/stores/stores.redux'
-import {getLogin} from '../../redux/slices/account/account.slice'
-import type {UserData} from '../../redux/slices/account/account.slice'
-import {logoutAuthentication} from '../../redux/slices/auth/logout.slice'
-import { useRouter } from "next/navigation"
+import style from "./Navbar.module.scss";
+
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState, AppDispatch } from "../../redux/stores/stores.redux";
+import { getLogin } from "../../redux/slices/account/account.slice";
+import type { UserData } from "../../redux/slices/account/account.slice";
+import { logoutAuthentication } from "../../redux/slices/auth/logout.slice";
+import { useRouter } from "next/navigation";
+import { Noto_Serif_Dives_Akuru } from "next/font/google";
 
 export default function NavbarComponent() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dark, setDark] = useState(false);
+
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const router = useRouter()
-  const dispatch = useDispatch<AppDispatch>()
-
-  const isLogin: boolean = useSelector((state: RootState) => state.account.isLogin)
-  const data: UserData | null= useSelector((state: RootState) => state.account.data)
-
-  //logout
-  const checkIsLogin: boolean = useSelector((state: RootState) => state.logout.isLogin) 
+  const data: UserData | null = useSelector(
+    (state: RootState) => state.account.data
+  );
 
   const toggleDark = () => {
     setDark(!dark);
@@ -32,159 +32,156 @@ export default function NavbarComponent() {
   };
 
   const handleCallAuthen = async () => {
-      try {
-         await dispatch(getLogin())
-      } catch (error) {
-          console.error("Auth check failed:", error)
-      }
-  }
-
-  const handleLogoutUser = async() => {
-      try {
-          const pathPage = window.location.pathname
-          const data = await dispatch(logoutAuthentication(pathPage)).unwrap()
-          if (data.EC === 0 && data.DT) {
-              router.push(data.DT.path)
-              return window.location.reload()
-          } 
-      } catch (error) {
-          console.log(error)
-      }
-  }
-
-  const handleClickLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault()
-      router.push('/clients/auth/login')
-  }
-
-  useEffect(() => {
-      handleCallAuthen()
-  }, [])
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setDropdownOpen(false);
-      }
+    try {
+      await dispatch(getLogin());
+    } catch (error) {
+      console.error(error);
     }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+  };
+
+  const handleLogoutUser = async () => {
+    try {
+      const pathPage = window.location.pathname;
+      const res = await dispatch(logoutAuthentication(pathPage)).unwrap();
+      if (res?.EC === 0 && res?.DT?.path) {
+        router.push(res.DT.path);
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleClickLogin = () => {
+    router.push("/clients/auth/login");
+  };
+
+  useEffect(() => {
+    handleCallAuthen();
   }, []);
 
-  return (
-    <nav className={`${style.navbarContainer} w-full fixed top-0 left-0 z-50 bg-white dark:bg-gray-900 dark:text-white shadow-sm`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 navbar-container_item">
-        <div className="flex items-center justify-between h-16">
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
+  const avatarSrc =
+    data?.data?.avatar
+      ? data.data.loginBy === "OAUTH"
+        ? data.data.avatar
+        : `${process.env.NEXT_PUBLIC_SERVER_URL}${data.data.avatar}`
+      : "/images/users/avatar/avatar_anonymous.png";
+
+  return (
+    <nav
+      className={`${style.navbarContainer} fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 shadow`}
+    >
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="no-underline! text-2xl text-white font-bold text-white-600 dark:text-blue-400">
+          <Link
+            href="/"
+            className="text-xl font-bold text-white dark:text-white no-underline!"
+          >
             MinhNhatShop
           </Link>
 
           {/* Search Desktop */}
           <div className="hidden md:flex flex-1 justify-center px-4">
             <input
-              type="text"
+              className="w-full max-w-md px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 outline-none"
               placeholder="Search products..."
-              className="w-full max-w-md px-4 py-2 rounded-full border dark:border-gray-700 bg-gray-100 dark:bg-gray-800 focus:outline-none"
             />
           </div>
 
-          {/* Right icons Desktop */}
-          <div className="hidden md:flex items-center space-x-6">
-
-            {/* Dark Mode */}
-            <button
-              onClick={toggleDark}
-              className="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
+          {/* Desktop Right */}
+          <div className="hidden md:flex items-center gap-5">
+            {/* Dark mode */}
+            <button onClick={toggleDark}>
               {dark ? "🌞" : "🌙"}
             </button>
 
             {/* Cart */}
-            <Link href="#" className="relative no-underline! ">
-              <span className="text-2xl">🛒</span>
+            <Link href="#" className="relative text-2xl no-underline!">
+              🛒
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-2 rounded-full">
                 3
               </span>
             </Link>
 
-            {/* Avatar Dropdown */}
-            {
-              data && (
+            {/* User */}
+            {data ? (
+              <div
+                ref={dropdownRef}
+                className="relative"
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
+                <Image
+                  src={avatarSrc}
+                  alt="avatar"
+                  width={40}
+                  height={40}
+                  className={`${style.avatar} mb-1`}
+                />
                 <div
-                  ref={dropdownRef}
-                  className="relative inline-block"
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
-                >
-                  {/* Avatar */}
-                  {/* login basic */}
-                  {
-                    data?.data?.loginBy === '' && (
+                  className={`${style.dropdown} absolute right-0 bg-white dark:bg-gray-800 border dark:border-gray-700 ${
+                    dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                  }`}
+                > 
+                  <div className={`${style.accountTitle}`}>
+                    <div className="flex justify-center">
                       <Image
-                            src={data?.data.avatar 
-                            ? `${process.env.NEXT_PUBLIC_SERVER_URL}${data.data.avatar}`
-                            : "/images/users/avatar/avatar_anonymous.png"}
-                            alt="avatar"
-                            width={40}
-                            height={40}
-                            className="rounded-circle"
+                        src={avatarSrc}
+                        alt="avatar"
+                        width={48}
+                        height={48}
+                        className={`${style.mobileProfileAvatar}`}
                       />
-                    )
-                  }
-                  {/* Oauth2 */}
-                  {
-                    data?.data?.loginBy !== '' && (
-                      <Image
-                            src={data?.data.avatar 
-                            ? `${data.data.avatar}`
-                            : "/images/users/avatar/avatar_anonymous.png"}
-                            alt="avatar"
-                            width={40}
-                            height={40}
-                            className="rounded-circle"
-                      />
-                    )
-                  }
-
-                  {/* Dropdown */}
-                  <div
-                    className={`
-                      absolute right-0 w-40 mt-2 bg-white dark:bg-gray-800
-                      border dark:border-gray-700 rounded shadow-md
-                      transition-all duration-200
-                      ${dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"}
-                    `}
-                  >
-                    <Link href="#" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    </div>
+                    <span className={`${style.accountRole}`}>{data.data.roleCode === 'USER' ? "Member" : data.data.roleCode }</span>
+                    <span className="w-full flex justify-center">{`Hi! ${data.data.lastName} ${data.data.firstName}`}</span>
+                    {/* <span className="w-full flex justify-center">{data.data.userName}</span> */}
+                  </div>
+                  <div className="my-2 w-full flex justify-between">
+                    <Link href="#" className={style.dropdownItem}>
                       Profile
                     </Link>
-                    <Link href="#" className="no-underline! block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <Link href="#" className={style.dropdownItem}>
                       Orders
                     </Link>
-                    <button 
-                      className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      onClick={handleLogoutUser}
-                    >
-                      Logout
-                    </button>
                   </div>
+                  <button
+                    onClick={handleLogoutUser}
+                    id={style.button}
+                    className={`${style.dropdownItem} w-full flex justify-center text-left`}
+                  >
+                    Logout
+                  </button>
                 </div>
-              )
-            }
-            {
-              !data && (
-                <button className="no-underline! text-white md:p-2" id={style.loginItem} type="button" onClick={handleClickLogin}>Login</button>
-              )
-            }
-
+              </div>
+            ) : (
+              <button
+                id={style.loginItem}
+                onClick={handleClickLogin}
+              >
+                Login
+              </button>
+            )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden text-2xl"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? "✖" : "☰"}
@@ -192,43 +189,68 @@ export default function NavbarComponent() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* <p>111</p> */}
-      </div>            
-
-
-
-
-
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700 pb-4">
-          <div className="px-4 py-3">
+        <div className={`${style.mobileMenu} md:hidden bg-white dark:bg-gray-900`}>
+          <div className="p-4">
             <input
-              type="text"
+              className="w-full px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 outline-none"
               placeholder="Search..."
-              className="w-full px-4 py-2 rounded-full border dark:border-gray-700 bg-gray-100 dark:bg-gray-800"
             />
           </div>
-          <Link href="/" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Home</Link>
-          <Link href="/products" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Products</Link>
-          <Link href="/about" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">About</Link>
-          <Link href="/contact" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</Link>
 
-          {/* Mobile Dark mode */}
-          <button
-            onClick={toggleDark}
-            className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
-          >
-            {dark ? "🌞 Light Mode" : "🌙 Dark Mode"}
-          </button>
-
-          {/* Mobile User Section */}
-          <div className="px-4 py-2 border-t dark:border-gray-700 mt-2">
-            <Link href="/profile" className="block py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Profile</Link>
-            <Link href="/orders" className="block py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Orders</Link>
-            <button className="w-full text-left py-2 hover:bg-gray-100 dark:hover:bg-gray-800">Logout</button>
+          {data && (
+            <div className={style.mobileProfile}>
+              <Image
+                src={avatarSrc}
+                alt="avatar"
+                width={48}
+                height={48}
+                className={style.mobileProfileAvatar}
+              />
+              <div>
+                <div className={style.mobileProfileName}>
+                  {data.data.firstName} {data.data.lastName}
+                </div>
+                <div className={style.mobileProfileRole}>
+                  {data.data.loginBy === "OAUTH"
+                    ? "Google Account"
+                    : "Member"}
+                </div>
+              </div>
+            </div>
+          )}
+          <div>
+            <div>
+              <Link href="/" className={style.dropdownItem}>
+                Home
+              </Link>
+              <Link href="/products" className={style.dropdownItem}>
+                Products
+              </Link>
+            </div>
+            <div className={style.mobileFlex}>
+              {!data && (
+                <button
+                  id={style.loginItemMobile}
+                  className="w-full m-4"
+                  onClick={handleClickLogin}
+                >
+                  Login
+                </button>
+              )}
+            </div>
           </div>
+
+
+          {data && (
+            <button
+              onClick={handleLogoutUser}
+              className={`${style.dropdownItem} w-full flex justify-center`}
+            >
+              <span>Logout</span>
+            </button>
+          )}
         </div>
       )}
     </nav>

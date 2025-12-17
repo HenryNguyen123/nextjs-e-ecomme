@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 export interface UserData {
   data: {
     age: number;
+    email: string;
     avatar: string;
     firstName: string;
     lastName: string;
