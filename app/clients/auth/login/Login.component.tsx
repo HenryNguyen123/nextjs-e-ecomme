@@ -21,6 +21,7 @@ import {fetchLoginByOauth2} from '../../../redux/slices/auth/oauth2.slice'
 import { toast } from "react-toastify";
 import { useRouter  } from "next/navigation";
 import Link from "next/link";
+import Oauth from "@/app/components/oauth/Oauth.component";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
  
@@ -118,16 +119,6 @@ const LoginComponent: React.FC = () => {
         router.push('/clients/auth/forgot-password/check-mail')
     }
 
-    //step: signIn by OAuth2
-    const handleLoginByOauth = async (title: string) => {
-        try {
-            //login by Oauth2
-            await dispatch(fetchLoginByOauth2({title})).unwrap();
-        } catch (error: unknown) {
-            console.log(error)
-        }
-    }
-
     return(
         <>
             <div className="login-container">
@@ -200,26 +191,9 @@ const LoginComponent: React.FC = () => {
     
                             <div className="text-center abouts">
                                 <p>Not a member? <span onClick={() => handleClickRegister()}>Register</span></p>
-                                <p>or sign up with:</p>
-                                <button  type="button"   onClick={() => {handleLoginByOauth('facebook')}} className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faFacebook} size="lg" color="#1877F2"/>
-                                </button>
-
-                                <button  type="button"   onClick={() => {handleLoginByOauth('google')}} className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faGoogle} size="lg" color="#DB4437"/>
-                                </button>
-
-                                {/* <button  type="button"   onClick={() => {handleLoginByOauth('facebook')}} className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faTwitter} size="lg" color="#1DA1F2"/>
-                                </button>
-
-                                <button  type="button"   onClick={() => {handleLoginByOauth('facebook')}} className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faGithub} size="lg" color="#333"/>
-                                </button> */}
-
-                                {/* <button  type="button"   className="btn btn-link btn-floating mx-1">
-                                <i className="fab fa-github"></i>
-                                </button> */}
+                                
+                                {/* login by oauth2 */}
+                                <Oauth/>
                             </div>
                         </form>
                     </div>

@@ -10,6 +10,7 @@ import type {AppDispatch} from '../../../../redux/stores/stores.redux'
 import { useDispatch } from "react-redux";
 import { handelResetPassword } from "../../../../redux/slices/forget-password/resetPassword.slice";
 import { useRouter, useSearchParams } from "next/navigation";
+import Oauth from "@/app/components/oauth/Oauth.component";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
 interface validType {
@@ -138,19 +139,6 @@ const ResetPasswordComponent: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* <div className="row mb-4 check-forget">
-                                <div className="col d-flex justify-content-center">
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" checked={rememberUser}  onChange={(e: eventHtml) => setRrememberUser(e.target.checked)} id="form2Example31"  />
-                                        <label className="form-check-label" htmlFor="form2Example31"> Remember me </label>
-                                    </div>
-                                </div>
-
-                                <div className="col forgot">
-                                    <a href="#!">Forgot password?</a>
-                                </div>
-                            </div> */}
-
                             <button  type="button" 
                                 data-mdb-button-init data-mdb-ripple-init 
                                 className="btn btn-primary btn-block mb-4 button-forget-password "
@@ -169,26 +157,8 @@ const ResetPasswordComponent: React.FC = () => {
                             </div>
     
                             <div className="text-center abouts">
-                                <p>or sign up with:</p>
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faFacebook} size="lg" color="#1877F2"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faGoogle} size="lg" color="#DB4437"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faTwitter} size="lg" color="#1DA1F2"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faGithub} size="lg" color="#333"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                <i className="fab fa-github"></i>
-                                </button>
+                                {/* login by oauth2 */}
+                                <Oauth/>
                             </div>
                         </form>
                     </div>

@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { sendMailForgotPassword } from "../../../../redux/slices/forget-password/mailForgetPassword.slice";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Oauth from "@/app/components/oauth/Oauth.component";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
 interface validType {
@@ -141,26 +142,8 @@ const MailForgotPassword: React.FC = () => {
                             </div>
     
                             <div className="text-center abouts">
-                                <p>or sign up with:</p>
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faFacebook} size="lg" color="#1877F2"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faGoogle} size="lg" color="#DB4437"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faTwitter} size="lg" color="#1DA1F2"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                    <FontAwesomeIcon icon={faGithub} size="lg" color="#333"/>
-                                </button>
-
-                                <button  type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-link btn-floating mx-1">
-                                <i className="fab fa-github"></i>
-                                </button>
+                                {/* login by oauth2 */}
+                                <Oauth/>
                             </div>
                         </form>
                     </div>
