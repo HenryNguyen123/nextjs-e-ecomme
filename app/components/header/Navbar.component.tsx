@@ -11,7 +11,11 @@ import { getLogin } from "../../redux/slices/account/account.slice";
 import type { UserData } from "../../redux/slices/account/account.slice";
 import { logoutAuthentication } from "../../redux/slices/auth/logout.slice";
 import { useRouter } from "next/navigation";
-import { Noto_Serif_Dives_Akuru } from "next/font/google";
+import { CiLight } from "react-icons/ci";
+import { MdModeNight } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
+import { IoMenu } from "react-icons/io5";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function NavbarComponent() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -104,17 +108,17 @@ export default function NavbarComponent() {
           </div>
 
           {/* Desktop Right */}
-          <div className="hidden md:flex items-center gap-5">
+          <div className="hidden md:flex items-center gap-3">
             {/* Dark mode */}
             <button onClick={toggleDark}>
-              {dark ? "🌞" : "🌙"}
+              {dark ? <MdModeNight className="text-2xl text-white"/> : <CiLight className="text-white text-2xl"/>}
             </button>
 
             {/* Cart */}
             <Link href="#" className="relative text-2xl no-underline!">
-              🛒
+              <FaShoppingCart className="text-2xl text-white hover:text-3xl"/>
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-2 rounded-full">
-                3
+                0
               </span>
             </Link>
 
@@ -184,7 +188,7 @@ export default function NavbarComponent() {
             className="md:hidden text-2xl"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? "✖" : "☰"}
+            {mobileMenuOpen ? <AiOutlineClose className="text-2xl"/> : <IoMenu className="text-2xl"/>}
           </button>
         </div>
       </div>

@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import './register.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faUser, faUnlockKeyhole, faHouse, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import type { AppDispatch} from '../../../redux/stores/stores.redux'

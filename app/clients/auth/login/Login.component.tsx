@@ -2,21 +2,14 @@
 import React, { useEffect, useState } from "react"
 import './login.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
-// import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faUser, faUnlockKeyhole, faHouse, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import type { AppDispatch} from '../../../redux/stores/stores.redux'
-// import type {RootState, AppDispatch} from '../../../redux/store/store'
-// import { useDispatch, useSelector } from "react-redux";
 import { useDispatch  } from "react-redux";
 // login basic
 import {loginAuthentication} from '../../../redux/slices/auth/login.slice'
 import {setLogin} from '../../../redux/slices/account/account.slice'
 import type {dataLogin} from '../../../redux/slices/account/account.slice'
-// import type {UserData} from '../../../redux/slices/account/userLoginSlice'
-// login wit oauth2
-import {fetchLoginByOauth2} from '../../../redux/slices/auth/oauth2.slice'
 
 import { toast } from "react-toastify";
 import { useRouter  } from "next/navigation";

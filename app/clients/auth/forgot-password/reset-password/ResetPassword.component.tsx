@@ -1,6 +1,5 @@
 'use client'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebook, faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faUnlockKeyhole, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import type React from "react"
 import './forgetPassword.scss'
