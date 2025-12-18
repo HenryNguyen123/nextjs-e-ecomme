@@ -87,16 +87,25 @@ export default function NavbarComponent() {
 
   return (
     <nav
-      className={`${style.navbarContainer} fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 shadow`}
+      className={`${style.navbarContainer} fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 `}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-white dark:text-white no-underline!"
+            className="flex justify-center no-underline!"
           >
-            MinhNhatShop
+            <Image
+              src='/images/logo/website/logoIndex.png'
+              alt="avatar"
+              width={45}
+              height={45}
+              className=''
+            />
+            <p className="pt-2  text-2xl font-bold text-black dark:text-white no-underline!">
+              MinhNhatShop
+            </p>
           </Link>
 
           {/* Search Desktop */}
@@ -111,12 +120,12 @@ export default function NavbarComponent() {
           <div className="hidden md:flex items-center gap-3">
             {/* Dark mode */}
             <button onClick={toggleDark}>
-              {dark ? <MdModeNight className="text-2xl text-white"/> : <CiLight className="text-white text-2xl"/>}
+              {dark ? <MdModeNight className="text-2xl text-gray-600  dark:text-white"/> : <CiLight className="text-gray-600  text-2xl dark:text-white"/>}
             </button>
 
             {/* Cart */}
             <Link href="#" className="relative text-2xl no-underline!">
-              <FaShoppingCart className="text-2xl text-white hover:text-3xl"/>
+              <FaShoppingCart className="text-2xl text-gray-600"/>
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs px-2 rounded-full">
                 0
               </span>
@@ -178,7 +187,7 @@ export default function NavbarComponent() {
                 id={style.loginItem}
                 onClick={handleClickLogin}
               >
-                Login
+                Sign In
               </button>
             )}
           </div>
@@ -240,7 +249,7 @@ export default function NavbarComponent() {
                   className="w-full m-4"
                   onClick={handleClickLogin}
                 >
-                  Login
+                  Sign In
                 </button>
               )}
             </div>

@@ -1,6 +1,7 @@
 .navbarContainer {
   backdrop-filter: blur(6px);
-    background: linear-gradient(135deg, #d4ebec, #b2b3f8, #d4a0f0, #f8a8fa);
+    // background: linear-gradient(135deg, #d4ebec, #b2b3f8, #d4a0f0, #f8a8fa);
+    background: linear-gradient(115deg, #FDFDFD, #F4F6FD, #D9E0FC, #F1F3FB);
     background-size: 400% 400%;
     animation: gradientShift 12s ease-in-out infinite;
 }
@@ -25,6 +26,9 @@
   color: #fff;
   padding: 6px 14px;
   font-weight: 600;
+  border: 1px solid #4A6CF7;
+  background-color: #4A6CF7;
+  border-radius: 10px;
 //   border-radius: 999px;
 //   font-size: 14px;
 //   transition: 0.25s;
@@ -34,8 +38,8 @@
     transform: translateY(-1px);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(206, 10, 10, 0.2);
-    background: linear-gradient(115deg, #ffcff8, #fac8e7, #e7bbff, #fd93ff);
-    color: #ec2ea9;
+    // background: linear-gradient(115deg, #ffcff8, #fac8e7, #e7bbff, #fd93ff);
+    color: #fff;
     scale: 1.05;
     transition: all 0.25s ease;
   }

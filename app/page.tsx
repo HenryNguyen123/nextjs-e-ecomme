@@ -1,3 +1,4 @@
+import HomeComponent from "@/app/components/home/Home.component";
 import Layout from "@/app/layouts/Layout";
 
 export default function Home() {
@@ -5,9 +6,7 @@ export default function Home() {
     <>
       <div>
         <Layout>
-          <div>
-              home
-          </div>
+          <HomeComponent/>
         </Layout>
       </div>
     </>
