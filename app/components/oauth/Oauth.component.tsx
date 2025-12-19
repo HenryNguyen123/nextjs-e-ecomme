@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { fetchLoginByOauth2 } from "@/app/redux/slices/auth/oauth2.slice"
 import { AppDispatch } from "@/app/redux/stores/stores.redux"
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons"

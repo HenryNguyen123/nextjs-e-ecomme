@@ -1,4 +1,5 @@
 'use client'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from "react"
 import './login.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

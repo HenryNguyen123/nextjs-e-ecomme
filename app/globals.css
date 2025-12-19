@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ======================
+   BASE
+====================== */
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ======================
+   THEME TOKENS – LIGHT
+====================== */
+:root {
+  /* Text */
+  --text-primary: #171717;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+
+  /* Background */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+
+  /* Border */
+  --border-default: #e5e7eb;
+}
+
+/* ======================
+   THEME TOKENS – DARK
+====================== */
+html.dark {
+  /* Text */
+  --text-primary: #ededed;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+
+  /* Background */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111827;
+
+  /* Border */
+  --border-default: #1f2937;
+}
+
+/* ======================
+   GLOBAL UTILITIES
+====================== */
+@layer utilities {
+  /* Text */
+  .text-primary {
+    color: var(--text-primary);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+
+  /* Background */
+  .bg-primary {
+    background-color: var(--bg-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+
+  /* Border */
+  .border-default {
+    border-color: var(--border-default);
+  }
 }

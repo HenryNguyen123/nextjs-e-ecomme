@@ -6,7 +6,7 @@ const Background:React.FC = () => {
     return(
         <>
             <div className={`${style.backgroundModule}`}>
-                <div className="flex justify-center">
+                <div className="flex justify-center dark:bg-black">
                     <div className="max-w-7xl min-w-7xl flex justify-between my-19 md:min-w-7xl lg:min-w-7xl">
                         <div className="flex-1 mt-20">
                             <h1>Next.js Boilerplate for Your Busi|</h1>

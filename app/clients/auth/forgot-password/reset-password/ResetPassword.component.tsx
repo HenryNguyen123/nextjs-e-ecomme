@@ -1,4 +1,5 @@
 'use client'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUnlockKeyhole, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import type React from "react"
