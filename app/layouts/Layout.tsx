@@ -11,9 +11,9 @@ const Layout = ({children} : MainLayoutProps) => {
             <div>
                 <NavbarComponent/>
                 {/* <div className="container"> */}
-                    <main>
-                        {children}
-                    </main>
+                <main>
+                    {children}
+                </main>
                 {/* </div> */}
                 <Footer/>
             </div>

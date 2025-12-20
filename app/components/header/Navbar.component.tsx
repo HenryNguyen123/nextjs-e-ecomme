@@ -97,7 +97,7 @@ export default function NavbarComponent() {
               className=''
             />
             <p className={`text-primary pt-2  text-2xl font-bold text-black `}>
-              MinhNhatShop
+              <strong>MinhNhatShop</strong>
             </p>
           </Link>
 

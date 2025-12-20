@@ -1,37 +1,91 @@
-import Image from "next/image"
-import style from './backgroundCss.module.scss'
+import Image from "next/image";
+import style from "./backgroundCss.module.scss";
 
-const Background:React.FC = () => {
+const Background: React.FC = () => {
+  return (
+    <div className={`${style.backgroundModule} w-full`}>
+      
+      {/* FULL WIDTH */}
+      <div className="w-full px-4 py-16 flex justify-center">
+        
+        {/* CONTENT */}
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:max-w-7xl">
+          
+          {/* LEFT */}
+          <div className="w-full lg:w-1/3 text-center lg:text-left">
+            <h1 className="text-3xl md:text-3xl lg:text-5xl font-bold">
+              Next.js Boilerplate for Your Business
+            </h1>
 
-    return(
-        <>
-            <div className={`${style.backgroundModule}`}>
-                <div className="flex justify-center dark:bg-black">
-                    <div className="max-w-7xl min-w-7xl flex justify-between my-19 md:min-w-7xl lg:min-w-7xl">
-                        <div className="flex-1 mt-20">
-                            <h1>Next.js Boilerplate for Your Busi|</h1>
-                            <p className="my-19">
-                                Handcrafted Next.js starter for your next - Startup, Business, Agency or SaaS Website. 
-                                Comes with refreshing design, integrations and everything you need to kickstart your next web project.
-                            </p>
-                            <button className="px-10 py-2 border-2 bg-amber-300">
-                                click me now ---
-                            </button>
-                        </div>
-                        <div className="flex-2 ml-10">
-                            <Image
-                                src='/images/test/backgroundtest1.png'
-                                alt="background"
-                                width={1280}
-                                height={400}
-                                className='min-w-8xl max-w-12/12 max-h-12/12 min-h-12/12'
-                              />
-                        </div>
-                    </div>
-                </div>
+            <p className="my-6 text-base md:text-lg">
+              Handcrafted Next.js starter for your next Startup, Business,
+              Agency or SaaS Website. Comes with refreshing design,
+              integrations and everything you need to kickstart your next web
+              project.
+            </p>
+
+            <button className="text-2xl loginItem">
+              Click me now
+            </button>
+          </div>
+
+          {/* RIGHT */}
+          <div className="w-full lg:w-2/3">
+            <div className="relative w-full aspect-[16/9]">
+
+              {/* TẤM SAU – LỚN NHẤT */}
+              <div className="absolute inset-0 z-10">
+                <Image
+                  src="/images/test/backgroundIT.png"
+                  alt="background back"
+                  fill
+                  className="object-cover rounded-xl"
+                  priority
+                />
+              </div>
+
+              {/* TẤM MỜ – GÓC TRÁI DƯỚI */}
+              <div
+                className="
+                  absolute
+                  z-20
+                  left-0 bottom-0
+                  w-[calc(80%+30px)]
+                  h-[calc(80%+30px)]
+                  bg-black/30
+                  backdrop-blur-md
+                  rounded-xl
+                "
+              />
+
+              {/* TẤM ĐẦU – GÓC TRÁI DƯỚI */}
+              <div
+                className="
+                  absolute
+                  z-30
+                  left-0 bottom-0
+                  w-4/5
+                  h-4/5
+                "
+              >
+                <Image
+                  src="/images/test/backgroundIT.png"
+                  alt="background front"
+                  fill
+                  className="object-cover rounded-xl shadow-2xl"
+                />
+              </div>
+
             </div>
-        </>
-    )
-}
+          </div>
 
-export default Background
+
+
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Background;

@@ -1,88 +1,99 @@
-import Image from "next/image"
+import Image from "next/image";
 import Link from "next/link";
-import React from "react"
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import React from "react";
+import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
 import { FaSquareThreads } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
-
-    return(
-        <>
-            <div className="w-full my-30 flex justify-center dark:bg-black">
-                <div className="max-w-7xl min-w-7xl">
-                    <div className="flex justify-between mt-4">
-                    <div className="flex-1">
-                        <div className="flex ">
-                            <Image
-                            src='/images/logo/website/logoIndex.png'
-                            alt="avatar"
-                            width={45}
-                            height={45}
-                            className='mr-1'
-                            />
-                            <p className="pt-2  text-2xl font-bold text-black dark:text-white no-underline!">
-                                MinhNhatShop
-                            </p>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.</p>
-                        <div className="flex">
-                            <FaFacebook className="text-3xl text-blue-600 cursor-pointer"/>
-                            <FaInstagramSquare className="mx-1 text-3xl text-rose-400 cursor-pointer"/>
-                            <FaSquareThreads className="text-3xl cursor-pointer"/>
-                        </div>
-                    </div>
-                        <div className="w-full flex-1">
-                            <h4>MinhNhat Shop</h4>
-                            <div>
-                                <Link href="#" className="text-black no-underline!">Home</Link>
-                                <br/>
-                                <Link href="#" className="text-black no-underline!">Products</Link>
-                                <br/>
-                                <Link href="#" className="text-black no-underline!">Blogs</Link>
-                                <br/>
-                                <Link href="#" className="text-black no-underline!">About</Link>
-                                <br/>
-                            </div>
-                        </div>
-                        <div className="flex-1">
-                            <h4>Support</h4>
-                            <div>
-                                <Link href="#" className="text-black no-underline!">Company</Link>
-                                <br/>
-                                <Link href="#" className="text-black no-underline!">Accout</Link>
-                                <br/>
-                                <Link href="#" className="text-black no-underline!">Blogs</Link>
-                                <br/>
-                                <Link href="#" className="text-black no-underline!">About</Link>
-                                <br/>
-                            </div>
-                        </div>
-                        <div className="flex-1">
-                            <h4>Get in touch</h4>
-                            <div>
-                                <span className="text-black">Toll Free Customer Care</span>
-                                <br/>
-                                <span className="text-black">+84 123456789</span>
-                                <br/>
-                                <span className="text-black">Need live support?</span>
-                                <br/>
-                                <span className="text-black">nhokkudo143@gmail.com</span>
-                                <br/>
-                            </div>
-                        </div>
-                        <div className="flex-1">
-                            <h4>Newsletter</h4>
-                            <div>
-                                <span className="text-black">Subscribe to receive future updates</span>
-                                <br/>
-                                <input type="text" placeholder="Subscribe .." className="mt-1 border-2 px-4 py-1 bd-10"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <footer className="w-full dark:bg-black py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        
+        {/* GRID LAYOUT */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+          
+          {/* LOGO + DESC */}
+          <div className="flex flex-col md:items-center">
+            <div className="flex items-center mb-4 lg:justify-center">
+              <Image
+                src="/images/logo/website/logoIndex.png"
+                alt="logo"
+                width={45}
+                height={45}
+                className="mr-2"
+              />
+              <h2 className="text-2xl font-bold dark:text-white">
+                MinhNhat<span className="text-primary">Shop</span>
+              </h2>
             </div>
-        </>
-    )
-}
-export default Footer
+
+            <p className="text-sm  dark:text-gray-300 mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+
+            <div className="flex gap-3">
+              <FaFacebook className="text-2xl text-blue-600 cursor-pointer" />
+              <FaInstagramSquare className="text-2xl text-rose-400 cursor-pointer" />
+              <FaSquareThreads className="text-2xl cursor-pointer dark:text-white" />
+            </div>
+          </div>
+
+          {/* COMPANY */}
+          <div>
+            <h4 className="font-bold text-lg mb-3 dark:text-white">
+              MinhNhat Shop
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="#" className="hover:underline dark:text-gray-300">Home</Link></li>
+              <li><Link href="#" className="hover:underline dark:text-gray-300">Products</Link></li>
+              <li><Link href="#" className="hover:underline dark:text-gray-300">Blogs</Link></li>
+              <li><Link href="#" className="hover:underline dark:text-gray-300">About</Link></li>
+            </ul>
+          </div>
+
+          {/* SUPPORT */}
+          <div>
+            <h4 className="font-bold text-lg mb-3 dark:text-white">
+              Support
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="#" className="hover:underline dark:text-gray-300">Company</Link></li>
+              <li><Link href="#" className="hover:underline dark:text-gray-300">Account</Link></li>
+              <li><Link href="#" className="hover:underline dark:text-gray-300">Blogs</Link></li>
+              <li><Link href="#" className="hover:underline dark:text-gray-300">About</Link></li>
+            </ul>
+          </div>
+
+          {/* CONTACT */}
+          <div>
+            <h4 className="font-bold text-lg mb-3 dark:text-white">
+              Get in touch
+            </h4>
+            <p className="text-sm dark:text-gray-300">Toll Free Customer Care</p>
+            <p className="text-sm font-semibold dark:text-white">+84 123456789</p>
+            <p className="text-sm dark:text-gray-300 mt-2">Need live support?</p>
+            <p className="text-sm dark:text-gray-300">nhokkudo143@gmail.com</p>
+          </div>
+
+          {/* NEWSLETTER */}
+          <div>
+            <h4 className="font-bold text-lg mb-3 dark:text-white">
+              Newsletter
+            </h4>
+            <p className="text-sm dark:text-gray-300 mb-2">
+              Subscribe to receive future updates
+            </p>
+            <input
+              type="email"
+              placeholder="Your email"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none"
+            />
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
