@@ -187,6 +187,9 @@ export default function NavbarComponent() {
           </div>
 
           {/* Mobile Button */}
+          <div className="md:hidden flex items-center">
+            <ThemeToggle/>
+          </div>
           <button
             className="md:hidden text-2xl"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
