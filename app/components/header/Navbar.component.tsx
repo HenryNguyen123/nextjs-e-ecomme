@@ -141,7 +141,7 @@ export default function NavbarComponent() {
                   className={`${style.avatar} mb-1`}
                 />
                 <div
-                  className={`${style.dropdown} absolute right-0 bg-white dark:bg-gray-800 border dark:border-gray-700 ${
+                  className={`${style.dropdown} absolute right-0 dark:bg-gray-800 border dark:border-gray-700 ${
                     dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
                   }`}
                 > 
@@ -159,20 +159,20 @@ export default function NavbarComponent() {
                     <span className="w-full flex justify-center">{`Hi! ${data.data.lastName} ${data.data.firstName}`}</span>
                     {/* <span className="w-full flex justify-center">{data.data.userName}</span> */}
                   </div>
-                  <div className="my-2 w-full flex justify-between">
-                    <Link href="#" className={style.dropdownItem}>
-                      Profile
+                  <div className="my-2 w-full flex justify-between p-3">
+                    <Link href="#" className={` dark:text-black`}>
+                      <span className="dark:text-black">Profile</span>
                     </Link>
-                    <Link href="#" className={style.dropdownItem}>
+                    <Link href="#" className="text-primary">
                       Orders
                     </Link>
                   </div>
                   <button
                     onClick={handleLogoutUser}
                     id={style.button}
-                    className={`${style.dropdownItem} w-full flex justify-center text-left`}
+                    className={`${style.dropdownItem} w-full flex justify-center text-left cursor-pointer text-white`}
                   >
-                    Logout
+                    Sign Out
                   </button>
                 </div>
               </div>
@@ -201,10 +201,10 @@ export default function NavbarComponent() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className={`${style.mobileMenu} md:hidden bg-white dark:bg-gray-900`}>
+        <div className={`${style.mobileMenu} md:hidden max-h-7xl`}>
           <div className="p-4">
             <input
-              className="w-full px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 outline-none"
+              className="w-full px-4 py-2 rounded-full bg-gray-100 text-black outline-none"
               placeholder="Search..."
             />
           </div>
@@ -235,7 +235,7 @@ export default function NavbarComponent() {
               <Link href="/" className={style.dropdownItem}>
                 Home
               </Link>
-              <Link href="/products" className={style.dropdownItem}>
+              <Link href="#" className={style.dropdownItem}>
                 Products
               </Link>
             </div>
@@ -258,7 +258,7 @@ export default function NavbarComponent() {
               onClick={handleLogoutUser}
               className={`${style.dropdownItem} w-full flex justify-center`}
             >
-              <span>Logout</span>
+              <span>Sign Out</span>
             </button>
           )}
         </div>

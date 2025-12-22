@@ -22,9 +22,9 @@ export default function ThemeToggle() {
       }
     >
       {currentTheme === "dark" ? (
-        <MdModeNight className="text-2xl" />
+        <MdModeNight className="text-2xl cursor-pointer" />
       ) : (
-        <CiLight className="text-2xl" />
+        <CiLight className="text-2xl cursor-pointer" />
       )}
     </button>
   );

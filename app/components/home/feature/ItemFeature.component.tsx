@@ -1,4 +1,3 @@
-import { IoStatsChart } from "react-icons/io5"
 import { IconType } from "react-icons";
 import style from "./model.module.scss";
 interface ItemStyle {
@@ -9,11 +8,11 @@ interface ItemStyle {
 interface ContextStyle {
     context: ItemStyle
 }
-const ItemModel:React.FC<ContextStyle> = ({ context }) => {
+const ItemFeatureCom:React.FC<ContextStyle> = ({ context }) => {
 
     return(
         <>
-                <div className={`${style.modelContainer} flex flex-col items-center text-center`}>
+                <div className={`${style.modelContainer} flex flex-col items-center text-center dark:shadow`}>
                   <div className={style.iconModel}>
                     <span className="text-4xl">
                       <context.icon />
@@ -31,4 +30,4 @@ const ItemModel:React.FC<ContextStyle> = ({ context }) => {
         </>
     )
 }
-export default ItemModel
+export default ItemFeatureCom

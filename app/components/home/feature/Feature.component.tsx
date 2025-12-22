@@ -6,7 +6,7 @@ import {
   IoShieldCheckmarkOutline,
   IoCodeSlashOutline
 } from "react-icons/io5";
-import ItemModel from "@/app/components/home/model/ItemModel.component";
+import ItemFeatureCom from "@/app/components/home/feature/ItemFeature.component";
 
 const items = [
   {
@@ -41,19 +41,33 @@ const items = [
   },
 ];
 
-const ModleComponent: React.FC = () => {
+const FeatureComponent: React.FC = () => {
   return (
     <div className="w-full">
-      <div className="flex justify-center my-36 px-4">
+      <div className="flex justify-center mt-36 px-4">
         <div className="max-w-7xl w-full">
 
           {/* TITLE */}
           <div className="flex justify-center mb-20">
             <div className="max-w-2xl text-center">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                Essential Integrations with Modern Design
-              </h1>
-              <p className="text-gray-600">
+              <div className="relative group flex justify-centerl">
+                <h1 className="relative z-50 text-2xl font-bold max-w-2xl text-center md:text-5xl">
+                  Essential Integrations with Modern Design
+                </h1>
+                <span className="
+                    absolute -top-32 inset-0 flex items-center justify-center
+                    text-7xl font-extrabold uppercase
+                    text-gray-600 text-primary
+                    opacity-10
+                    transition-all duration-300
+                    md:text-9xl md:-top-40
+                    "
+                >
+                    Feature
+                </span>
+
+              </div>
+              <p className="text-gray-600 mt-5">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               </p>
             </div>
@@ -63,22 +77,7 @@ const ModleComponent: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {items.map((item, index) => (
               <div key={index}>
-                <ItemModel context={item} />
-                {/* <div className="flex flex-col items-center text-center">
-                  <div className={style.iconModel}>
-                    <span className="text-4xl">
-                      <IoStatsChart />
-                    </span>
-                  </div>
-
-                  <h4 className="text-2xl font-semibold my-5">
-                    {item.title}
-                  </h4>
-
-                  <p className="text-gray-600">
-                    {item.desc}
-                  </p>
-                </div> */}
+                <ItemFeatureCom context={item} />
               </div>
             ))}
           </div>
@@ -89,4 +88,4 @@ const ModleComponent: React.FC = () => {
   );
 };
 
-export default ModleComponent;
+export default FeatureComponent;

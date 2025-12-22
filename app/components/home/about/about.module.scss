@@ -1,0 +1,13 @@
+.titleTextAbout {
+    border-bottom: 2px solid #dfdef75e;
+    &:hover {
+        border-bottom: 2px solid #574bff;
+    }
+}
+.itemAboutText {
+    border-bottom: 2px solid #574bff;
+    color: #574bff;
+}
+.mgCenter {
+    margin: auto;
+}

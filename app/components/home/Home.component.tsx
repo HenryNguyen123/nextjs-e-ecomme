@@ -1,5 +1,6 @@
+import AboutHome from "@/app/components/home/about/AboutHome.component"
 import Background from "@/app/components/home/background/Background.component"
-import ModleComponent from "@/app/components/home/model/Model.component"
+import FeatureComponent from "@/app/components/home/feature/Feature.component"
 import React from "react"
 
 const HomeComponent: React.FC = () => {
@@ -9,7 +10,8 @@ const HomeComponent: React.FC = () => {
             <div className="mt-16 w-full">
                 <div className="">
                     <Background/>
-                    <ModleComponent/>
+                    <FeatureComponent/>
+                    <AboutHome/>
                 </div>
             </div>
         </>
