@@ -54,9 +54,10 @@ const ItemOur:React.FC = () => {
                 flex items-end justify-center gap-4
                 pb-6
                 bg-black/40
-                opacity-0
+                opacity-100
                 group-hover:opacity-100
                 transition-opacity duration-300
+                md:opacity-0
               "
             >
               <Link href={profile.fb}>
