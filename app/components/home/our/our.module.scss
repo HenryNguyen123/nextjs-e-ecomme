@@ -1,6 +1,6 @@
 
 .ourContainer {
-    cursor: pointer;
+    // cursor: pointer;
 }
 .iconHover {
     cursor: pointer;
@@ -9,8 +9,32 @@
     background-color: #8585855c;
     animation: slideUpFade 1s ease forwards;
     &:hover {
-        background-color: #155bff99;
+        background-color: #155bff;
 
+    }
+}
+.facebookIcon{
+    color: #155bff;
+    &:hover{
+        scale: 1.2;
+        animation: inherit 1s ease all;
+        opacity: 0.81;
+    }
+}
+.insIcon{
+    color: #f763f7;
+    &:hover{
+        scale: 1.2;
+        animation: inherit 1s ease all;
+        opacity: 0.81;
+    }
+}
+.ggIcon{
+    color: #fff94e;
+    &:hover{
+        scale: 1.2;
+        animation: inherit 1s ease all;
+        opacity: 0.81;
     }
 }
 

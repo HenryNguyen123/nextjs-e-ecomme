@@ -1,7 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import style from './our.module.scss'
-
+import { FaFacebookMessenger } from "react-icons/fa6";
+import { LuInstagram } from "react-icons/lu";
+import { FaSquareGooglePlus } from "react-icons/fa6";
 const ItemOur:React.FC = () => {
     const profiles = [
     {
@@ -58,13 +60,13 @@ const ItemOur:React.FC = () => {
               "
             >
               <Link href={profile.fb}>
-                <span className={style.iconHover}>fb</span>
+                <FaFacebookMessenger className={`${style.facebookIcon} text-2xl`}/>
               </Link>
               <Link href={profile.ins}>
-                <span className={style.iconHover}>ins</span>
+                <LuInstagram className={`${style.insIcon} text-2xl mx-5`}/>
               </Link>
               <Link href={profile.gg}>
-                <span className={style.iconHover}>gg</span>
+                <FaSquareGooglePlus className={`${style.ggIcon} text-2xl`}/>
               </Link>
             </div>
           </div>
