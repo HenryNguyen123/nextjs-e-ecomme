@@ -1,0 +1,26 @@
+
+.ourContainer {
+    cursor: pointer;
+}
+.iconHover {
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #8585855c;
+    animation: slideUpFade 1s ease forwards;
+    &:hover {
+        background-color: #155bff99;
+
+    }
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

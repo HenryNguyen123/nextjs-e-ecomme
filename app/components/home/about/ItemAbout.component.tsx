@@ -62,7 +62,7 @@ const ItemAbout:React.FC = () => {
                 <div className='mt-20'>
                     <div className='flex flex-col md:flex-row'>
                         <div className={`${style.mgCenter} w-full lg:w-3/6 px-3 pr-5 flex flex-col `}>
-                            <h4 className='text-xl md:text-5xl'>
+                            <h4 className='text-xl font-bold md:text-5xl'>
                                 {tabContents[activeTab].heading}
                             </h4>
                             {
