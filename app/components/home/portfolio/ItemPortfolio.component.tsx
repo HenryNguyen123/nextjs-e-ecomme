@@ -93,7 +93,7 @@ const ItemPortfolio: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0)
 
   return (
-    <section className="w-full py-20">
+    <section className="w-full">
       {/* TAB */}
       <ul className="flex justify-center mb-16">
         {contents.map((item, index) => (
@@ -105,7 +105,7 @@ const ItemPortfolio: React.FC = () => {
               transition-all duration-300
               ${
                 activeTab === index
-                  ? 'border-blue-600 text-blue-600 font-semibold'
+                  ? `${style.itemPortfolioText} font-semibold `
                   : 'border-transparent text-gray-500 hover:text-blue-600'
               }
               ${style.titleTextPortfoliot ?? ''}
@@ -138,8 +138,9 @@ const ItemPortfolio: React.FC = () => {
                 className="
                   absolute inset-0
                   bg-black/60
+                  opacity-100
                   flex flex-col justify-center items-center
-                  opacity-0 group-hover:opacity-100
+                  group-hover:opacity-100 md:opacity-0
                   transition-all duration-300
                 "
               >

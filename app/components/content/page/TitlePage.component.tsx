@@ -10,7 +10,7 @@ const TitlePage:React.FC<ContextType> = ({context}) => {
 
     return(
         <>
-          <div className="flex justify-center mb-20">
+          <div className="flex justify-center mb-20 p-3">
             <div className="max-w-2xl text-center">
               <div className="relative group flex justify-centerl">
                 <h1 className="relative z-50 text-2xl font-bold max-w-2xl text-center md:text-5xl">
@@ -19,7 +19,7 @@ const TitlePage:React.FC<ContextType> = ({context}) => {
                 <span className="
                     
                     absolute -top-20 inset-0 flex items-center justify-center
-                    text-6xl font-extrabold uppercase
+                    text-5xl font-extrabold uppercase
                     text-gray-600 text-primary
                     opacity-10
                     transition-all duration-300
