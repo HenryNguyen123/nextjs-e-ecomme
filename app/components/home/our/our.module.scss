@@ -1,6 +1,9 @@
 
 .ourContainer {
     // cursor: pointer;
+    &:hover{
+        scale: 1.2;
+    }
 }
 .iconHover {
     cursor: pointer;

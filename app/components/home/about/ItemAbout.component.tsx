@@ -50,7 +50,7 @@ const ItemAbout:React.FC = () => {
                                 onClick={() => setActiveTab(index)}
                                 className={`
                                     ${style.titleTextAbout} w-1/3 text-center py-5 cursor-pointer transition-all duration-300
-                                ${activeTab === index ? `${style.itemAboutText} font-semibold` : 'text-gray-500 border-transparent hover:text-blue-600'}
+                                    ${activeTab === index ? `${style.itemAboutText} font-semibold` : 'text-gray-500 border-transparent hover:text-blue-600'}
                                 `}
                             >
                                 {value.title}
