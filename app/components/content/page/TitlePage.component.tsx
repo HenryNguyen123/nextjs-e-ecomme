@@ -23,7 +23,7 @@ const TitlePage:React.FC<ContextType> = ({context}) => {
                     text-gray-600 text-primary
                     opacity-10
                     transition-all duration-300
-                    md:text-9xl md:-top-40
+                    md:text-8xl md:-top-40 lg:text-9xl
                     "
                 > 
                     {context.heading}

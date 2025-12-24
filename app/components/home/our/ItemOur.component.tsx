@@ -38,7 +38,7 @@ const ItemOur:React.FC = () => {
         <div key={index} className="text-center">
 
           {/* IMAGE + ICON */}
-          <div className="group relative w-[300px] mx-auto overflow-hidden">
+          <div className="group relative max-w-xl mx-auto overflow-hidden">
             <Image
               src={profile.image}
               width={300}
