@@ -1,4 +1,5 @@
 import TitlePage from "@/app/components/content/page/TitlePage.component"
+import ItemTestimonial from "@/app/components/home/testimonial/ItemTestimonial.component"
 
 const titlePage = {
     heading: 'TESTIMONIAL',
@@ -12,7 +13,11 @@ const TestimonialHome:React.FC = () => {
         <>
             <div className="w-full mt-60">
                 <div>
+                    {/* title */}
                     <TitlePage context={titlePage} />
+
+                    {/* content */}
+                    <ItemTestimonial/>
                 </div>
             </div>
         

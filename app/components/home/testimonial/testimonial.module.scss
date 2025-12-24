@@ -1,0 +1,19 @@
+.backgroundTestimonial {
+    background: linear-gradient(115deg, #FCFCFD, #F2F4FB, #F0F3FB, #FAFBFD);
+}
+:global(html.dark) .backgroundTestimonial {
+  background: linear-gradient(
+    115deg,
+    #0b0b0b,
+    #484545,
+    #323030,
+    #0f0f0f
+  );
+}
+
+.colorIcon{
+  color: var(--color-blue-600);
+}
+:global(html.dark) .colorIcon{
+  color: var(--color-white);
+}
