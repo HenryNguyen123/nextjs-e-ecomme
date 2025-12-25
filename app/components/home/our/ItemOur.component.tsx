@@ -34,7 +34,7 @@ const ItemOur:React.FC = () => {
 
     return (
     <div className={`grid grid-cols-1 md:grid-cols-3 gap-10 cursor-pointer`}>
-      {profiles.map((profile, index) => (
+      {profiles && profiles.map((profile, index) => (
         <div key={index} className="text-center">
 
           {/* IMAGE + ICON */}

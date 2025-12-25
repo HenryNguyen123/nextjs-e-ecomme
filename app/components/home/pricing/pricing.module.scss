@@ -1,0 +1,7 @@
+.boderPricing{
+    border: 2px solid #00000076;
+    padding: 20px;
+}
+:global(html.dark) .boderPricing{
+    border: 1px solid #dbdbdbc2;
+}

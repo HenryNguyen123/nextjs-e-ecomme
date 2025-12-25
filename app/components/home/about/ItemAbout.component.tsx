@@ -44,7 +44,7 @@ const ItemAbout:React.FC = () => {
             <div className="mt-20">
                 <ul className="flex justify-between">
                     {
-                        tabContents.map((value, index) => (
+                        tabContents && tabContents.map((value, index) => (
                             <li 
                                 key={index}
                                 onClick={() => setActiveTab(index)}

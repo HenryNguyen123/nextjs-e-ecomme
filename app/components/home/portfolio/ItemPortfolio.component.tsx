@@ -96,7 +96,7 @@ const ItemPortfolio: React.FC = () => {
     <section className="w-full">
       {/* TAB */}
       <ul className="flex justify-center mb-16">
-        {contents.map((item, index) => (
+        {contents && contents.map((item, index) => (
           <li
             key={index}
             onClick={() => setActiveTab(index)}

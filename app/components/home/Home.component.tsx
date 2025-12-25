@@ -3,6 +3,7 @@ import Background from "@/app/components/home/background/Background.component"
 import FeatureComponent from "@/app/components/home/feature/Feature.component"
 import OurHome from "@/app/components/home/our/OurHome.component"
 import PortfolioComponent from "@/app/components/home/portfolio/Portfolio.component"
+import PricingHome from "@/app/components/home/pricing/Pricing.component"
 import TestimonialHome from "@/app/components/home/testimonial/testimonial.component"
 import React from "react"
 
@@ -18,6 +19,7 @@ const HomeComponent: React.FC = () => {
                     <OurHome/>
                     <PortfolioComponent/>
                     <TestimonialHome/>
+                    <PricingHome/>
                 </div>
             </div>
         </>
