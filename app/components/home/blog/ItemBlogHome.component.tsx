@@ -30,14 +30,14 @@ const ItemBlogHome:React.FC = () => {
     
     return(
         <>
-            <div className="flex justify-between flex-col md:flex-row">
+            <div className="flex justify-around flex-col md:flex-row px-3">
                 {
                     contents && contents.map((value, index) => (
-                        <div key={index} className={`${style.blogHomeContainer} w-1/3 cursor-pointer`}>
+                        <div key={index} className={`${style.blogHomeContainer} w-full md:w-1/3 mt-5 md:mt-0 cursor-pointer`}>
                             <div className={style.imageWrapper}>
                                 <Image
                                     src={value.image}
-                                    width={400}
+                                    width={300}
                                     height={300}
                                     alt=""
                                     className={`${style.imageBlog}`}
@@ -52,8 +52,8 @@ const ItemBlogHome:React.FC = () => {
                                 </p>
                             </div>
                             <h1 className="titleBlog">
-                                <Link href={`mt-5 `}>
-                                    <strong className="text-2xl">{value.title}</strong>
+                                <Link href={``}>
+                                    <strong className="text-sm md:text-2xl">{value.title}</strong>
                                 </Link>
                             </h1>
                         </div>
