@@ -1,0 +1,67 @@
+import Image from "next/image"
+import Link from "next/link"
+import { MdOutlineAccountCircle } from "react-icons/md";
+import { CiCalendar } from "react-icons/ci";
+import style from './bloghome.module.scss'
+const contents  = [
+    {
+        image: '/images/test/bg1.jpg',
+        fullname: 'Alex Baland',
+        time: 'Jun 18, 2025',
+        title: 'Exploring MERN Stack: Powering Modern Web Development',
+        link: '',
+    },
+    {
+        image: '/images/test/bg1.jpg',
+        fullname: 'Alex Baland',
+        time: 'Jun 18, 2025',
+        title: 'Exploring MERN Stack: Powering Modern Web Development',
+        link: '',
+    },
+    {
+        image: '/images/test/bg1.jpg',
+        fullname: 'Alex Baland',
+        time: 'Jun 18, 2025',
+        title: 'Exploring MERN Stack: Powering Modern Web Development',
+        link: '',
+    }
+]
+const ItemBlogHome:React.FC = () => {
+    
+    return(
+        <>
+            <div className="flex justify-between flex-col md:flex-row">
+                {
+                    contents && contents.map((value, index) => (
+                        <div key={index} className={`${style.blogHomeContainer} w-1/3 cursor-pointer`}>
+                            <div className={style.imageWrapper}>
+                                <Image
+                                    src={value.image}
+                                    width={400}
+                                    height={300}
+                                    alt=""
+                                    className={`${style.imageBlog}`}
+                                />
+                            </div>
+                            <div className="mt-5 opacity-80">
+                                <p className="flex">
+                                    <span className="flex items-center"><MdOutlineAccountCircle/></span>
+                                    <span className="ml-1 mr-5">{value.fullname}</span>
+                                    <span className="flex items-center"><CiCalendar/></span>
+                                    <span className="ml-1">{value.time}</span>
+                                </p>
+                            </div>
+                            <h1 className="titleBlog">
+                                <Link href={`mt-5 `}>
+                                    <strong className="text-2xl">{value.title}</strong>
+                                </Link>
+                            </h1>
+                        </div>
+                    ))
+                }
+            </div>
+        </>
+    )
+}
+
+export default ItemBlogHome
