@@ -1,11 +1,7 @@
 import TitlePage from "@/app/components/content/page/TitlePage.component"
 import ItemOur from "@/app/components/home/our/ItemOur.component"
+import { dataOur } from '../../../../public/typescript/home/data'
 
-const titlePage = {
-  heading: 'Our',
-  title: 'Meet With Our Creative Dedicated Team',
-  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-}
 const OurHome:React.FC = () => {
 
     return(
@@ -13,7 +9,7 @@ const OurHome:React.FC = () => {
             <div className="w-full">
                 <div className="mt-60 px-3">
                     {/* title */}
-                    <TitlePage context={titlePage} />
+                    <TitlePage context={dataOur} />
 
                     <div className="flex justify-center mt-20">
                         <ItemOur/>

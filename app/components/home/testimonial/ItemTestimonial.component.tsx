@@ -10,31 +10,17 @@ import { RiNextjsFill } from "react-icons/ri";
 import { SiNestjs } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import Link from "next/link";
-
-const data = [
-  {
-    desc: "Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet...",
-    fullName: "Nguyễn Văn A",
-    time: "2 days ago",
-    image: "/images/test/bg1.jpg",
-  },
-  {
-    desc: "Sed ut perspiciatis unde... Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet...",
-    fullName: "Trần Thị B",
-    time: "1 week ago",
-    image: "/images/test/bg1.jpg",
-  },
-]
+import { itemDataTestimonials } from '../../../../public/typescript/home/data'
 
 const TestimonialSlider = () => {
   const [current, setCurrent] = useState(0)
 
   const next = () =>
-    setCurrent((prev) => (prev + 1) % data.length)
+    setCurrent((prev) => (prev + 1) % itemDataTestimonials.length)
 
   const prev = () =>
     setCurrent((prev) =>
-      prev === 0 ? data.length - 1 : prev - 1
+      prev === 0 ? itemDataTestimonials.length - 1 : prev - 1
     )
 
   return (
@@ -45,16 +31,16 @@ const TestimonialSlider = () => {
                 {/* slider */}
                 <div className="flex gap-12 items-center flex-col md:flex-row">
                 <div className="w-1/2">
-                    <p className="text-sm md:text-xl opacity-71">{data[current].desc}</p>
+                    <p className="text-sm md:text-xl opacity-71">{itemDataTestimonials[current].desc}</p>
                     <h4 className="font-bold text-sm md:text-xl my-4 ">
-                    {data[current].fullName}
+                    {itemDataTestimonials[current].fullName}
                     </h4>
-                    <p className="text-sm nd:text-xl opacity-71">{'"' + data[current].time + '"'}</p>
+                    <p className="text-sm nd:text-xl opacity-71">{'"' + itemDataTestimonials[current].time + '"'}</p>
                 </div>
 
                 <div className="w-1/2">
                     <Image
-                    src={data[current].image}
+                    src={itemDataTestimonials[current].image}
                     width={600}
                     height={600}
                     alt=""

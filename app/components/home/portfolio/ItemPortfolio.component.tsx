@@ -1,93 +1,9 @@
 'use client'
-
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import style from './portifio.module.scss'
-
-type PortfolioImage = {
-  image: string
-  productName: string
-  link: string
-}
-
-type PortfolioContent = {
-  heading: string
-  images: PortfolioImage[]
-}
-
-const contents: PortfolioContent[] = [
-  {
-    heading: 'All',
-    images: [
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 1',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 2',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 3',
-        link: '#',
-      },
-    ],
-  },
-  {
-    heading: 'Brand',
-    images: [
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 4',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 5',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 6',
-        link: '#',
-      },
-    ],
-  },
-  {
-    heading: 'Ecommerce',
-    images: [
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 7',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 8',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 9',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 10',
-        link: '#',
-      },
-      {
-        image: '/images/test/bg1.jpg',
-        productName: 'Product 11',
-        link: '#',
-      },
-    ],
-  },
-]
+import { itemDataPortpolios } from '../../../../public/typescript/home/data'
 
 const ItemPortfolio: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0)
@@ -96,7 +12,7 @@ const ItemPortfolio: React.FC = () => {
     <section className="w-full">
       {/* TAB */}
       <ul className="flex justify-center mb-16">
-        {contents && contents.map((item, index) => (
+        {itemDataPortpolios && itemDataPortpolios.map((item, index) => (
           <li
             key={index}
             onClick={() => setActiveTab(index)}
@@ -119,7 +35,7 @@ const ItemPortfolio: React.FC = () => {
       {/* CONTENT */}
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {contents[activeTab].images.map((value, index) => (
+          {itemDataPortpolios[activeTab].images.map((value, index) => (
             <div
               key={index}
               className="relative group overflow-hidden rounded-xl"

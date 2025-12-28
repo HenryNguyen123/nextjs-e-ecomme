@@ -3,36 +3,15 @@ import Link from "next/link"
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { CiCalendar } from "react-icons/ci";
 import style from './bloghome.module.scss'
-const contents  = [
-    {
-        image: '/images/test/bg1.jpg',
-        fullname: 'Alex Baland',
-        time: 'Jun 18, 2025',
-        title: 'Exploring MERN Stack: Powering Modern Web Development',
-        link: '',
-    },
-    {
-        image: '/images/test/bg1.jpg',
-        fullname: 'Alex Baland',
-        time: 'Jun 18, 2025',
-        title: 'Exploring MERN Stack: Powering Modern Web Development',
-        link: '',
-    },
-    {
-        image: '/images/test/bg1.jpg',
-        fullname: 'Alex Baland',
-        time: 'Jun 18, 2025',
-        title: 'Exploring MERN Stack: Powering Modern Web Development',
-        link: '',
-    }
-]
+import { itemDataBlogs } from '../../../../public/typescript/home/data'
+
 const ItemBlogHome:React.FC = () => {
     
     return(
         <>
             <div className="flex justify-around flex-col md:flex-row px-3">
                 {
-                    contents && contents.map((value, index) => (
+                    itemDataBlogs && itemDataBlogs.map((value, index) => (
                         <div key={index} className={`${style.blogHomeContainer} w-full md:w-1/3 mt-5 md:mt-0 cursor-pointer`}>
                             <div className={style.imageWrapper}>
                                 <Image

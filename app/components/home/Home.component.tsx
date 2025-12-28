@@ -1,5 +1,6 @@
 import AboutHome from "@/app/components/home/about/AboutHome.component"
 import Background from "@/app/components/home/background/Background.component"
+// import HomeClient from "@/app/components/home/HomeClient.client"
 import BlogHome from "@/app/components/home/blog/Blog.component"
 import FeatureComponent from "@/app/components/home/feature/Feature.component"
 import OurHome from "@/app/components/home/our/OurHome.component"
@@ -16,6 +17,7 @@ const HomeComponent: React.FC = () => {
             <div className="mt-16 w-full">
                 <div className="">
                     <Background/>
+                    {/* <HomeClient/> */}
                     <FeatureComponent/>
                     <AboutHome/>
                     <OurHome/>

@@ -1,11 +1,6 @@
 import TitlePage from "@/app/components/content/page/TitlePage.component"
 import ItemTestimonial from "@/app/components/home/testimonial/ItemTestimonial.component"
-
-const titlePage = {
-    heading: 'TESTIMONIAL',
-    title: 'What Our Clients Say About Us',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.'
-}
+import { dataTestimonial } from '../../../../public/typescript/home/data'
 
 const TestimonialHome:React.FC = () => {
 
@@ -14,7 +9,7 @@ const TestimonialHome:React.FC = () => {
             <div className="w-full mt-60">
                 <div>
                     {/* title */}
-                    <TitlePage context={titlePage} />
+                    <TitlePage context={dataTestimonial} />
 
                     {/* content */}
                     <ItemTestimonial/>

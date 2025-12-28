@@ -1,10 +1,7 @@
 import TitlePage from "@/app/components/content/page/TitlePage.component"
 import ItemBlogHome from "@/app/components/home/blog/ItemBlogHome.component"
-const titlePage = {
-heading: 'Blogs',
-title: 'Latest News & Articles From Our Blog',
-desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.'
-}
+import { dataBlog } from '../../../../public/typescript/home/data'
+
 const BlogHome:React.FC = () => {
 
     return(
@@ -12,7 +9,7 @@ const BlogHome:React.FC = () => {
             <div className="w-full mt-60 flex justify-center">
                 <div className="lg:max-w-7xl">
                     <div>
-                        <TitlePage context={titlePage} />
+                        <TitlePage context={dataBlog} />
                     </div>
                     <div className="w-full">
                         <ItemBlogHome/>

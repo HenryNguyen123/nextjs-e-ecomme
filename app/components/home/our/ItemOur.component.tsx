@@ -4,49 +4,34 @@ import style from './our.module.scss'
 import { FaFacebookMessenger } from "react-icons/fa6";
 import { LuInstagram } from "react-icons/lu";
 import { FaSquareGooglePlus } from "react-icons/fa6";
-const ItemOur:React.FC = () => {
-    const profiles = [
-    {
-        image: "/images/test/bg1.jpg",
-        fullname: "Olivia Andrium",
-        position: "Project Manager",
-        fb: "#",
-        ins: "#",
-        gg: "#",
-    },
-    {
-        image: "/images/test/bg1.jpg",
-        fullname: "James Walker",
-        position: "UI/UX Designer",
-        fb: "#",
-        ins: "#",
-        gg: "#",
-    },
-    {
-        image: "/images/test/bg1.jpg",
-        fullname: "Sophia Lee",
-        position: "Frontend Developer",
-        fb: "#",
-        ins: "#",
-        gg: "#",
-    },
-    ];
+import { itemDataOur } from '../../../../public/typescript/home/data'
 
-    return (
+const ItemOur:React.FC = () => {
+  return (
     <div className={`grid grid-cols-1 md:grid-cols-3 gap-10 cursor-pointer`}>
-      {profiles && profiles.map((profile, index) => (
+      {itemDataOur && itemDataOur.map((profile, index) => (
         <div key={index} className="text-center">
 
           {/* IMAGE + ICON */}
           <div className="group relative max-w-xl mx-auto overflow-hidden">
-            <Image
+            {/* <Image
               src={profile.image}
               width={300}
               height={400}
               alt={profile.fullname}
               className="rounded-xl transition-transform duration-500 group-hover:scale-105"
-            />
-
+            /> */}
+            <div className="relative w-[300px] aspect-[2/1] overflow-hidden rounded-xl group">
+              <Image
+                src={profile.image}
+                fill
+                sizes="300px"
+                alt={profile.fullname}
+                loading="lazy"
+                fetchPriority="low"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
             {/* ICON OVERLAY */}
             <div
               className="

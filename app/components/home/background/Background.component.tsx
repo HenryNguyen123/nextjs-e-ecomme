@@ -4,6 +4,7 @@ import style from "./backgroundCss.module.scss";
 const Background: React.FC = () => {
   return (
     <div className={`${style.backgroundModule} w-full`}>
+    {/* <div className={`w-full`}> */}
       
       {/* FULL WIDTH */}
       <div className="w-full px-4 py-16 flex justify-center">
@@ -33,7 +34,6 @@ const Background: React.FC = () => {
           <div className="w-full lg:w-2/3">
             <div className="relative w-full aspect-[16/9]">
 
-              {/* TẤM SAU – LỚN NHẤT */}
               <div className="absolute inset-0 z-10">
                 <Image
                   src="/images/test/backgroundIT.png"
@@ -44,7 +44,6 @@ const Background: React.FC = () => {
                 />
               </div>
 
-              {/* TẤM MỜ – GÓC TRÁI DƯỚI */}
               <div
                 className="
                   absolute

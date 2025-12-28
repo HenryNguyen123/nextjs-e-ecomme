@@ -86,7 +86,7 @@ html.dark {
   }
 
   /* button primary */
-  .loginItem {
+  /* .loginItem {
     
     color: #fff;
     padding: 10px 20px;
@@ -104,18 +104,18 @@ html.dark {
     color: #fff;
     scale: 1.05;
     transition: all 0.25s ease;
-  }
+  } */
   /* button O */
-  .buttonBg {
+  /* .buttonBg {
     padding: 15px 20px;
     background-color: #9ca3af;
     opacity: 0.81;
     border-radius: 50%;
     transition: all 0.3s ease;
-  }
+  } */
 
-  .buttonBg:hover {
+  /* .buttonBg:hover {
     opacity: 1;
     transform: scale(1.2);
-  }
+  } */
 }
