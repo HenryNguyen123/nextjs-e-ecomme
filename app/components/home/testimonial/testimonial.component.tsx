@@ -1,6 +1,7 @@
 import TitlePage from "@/app/components/content/page/TitlePage.component"
-import ItemTestimonial from "@/app/components/home/testimonial/ItemTestimonial.component"
+// import ItemTestimonial from "@/app/components/home/testimonial/ItemTestimonial.component"
 import { dataTestimonial } from '../../../../public/typescript/home/data'
+import TestimonialItemClient from "@/app/components/home/testimonial/Testimonial.client"
 
 const TestimonialHome:React.FC = () => {
 
@@ -12,7 +13,8 @@ const TestimonialHome:React.FC = () => {
                     <TitlePage context={dataTestimonial} />
 
                     {/* content */}
-                    <ItemTestimonial/>
+                    {/* <ItemTestimonial/> */}
+                    <TestimonialItemClient/>
                 </div>
             </div>
         

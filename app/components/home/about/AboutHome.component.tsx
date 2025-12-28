@@ -1,6 +1,7 @@
 import TitlePage from "@/app/components/content/page/TitlePage.component"
-import ItemAbout from "@/app/components/home/about/ItemAbout.component"
+// import ItemAbout from "@/app/components/home/about/ItemAbout.component"
 import { dataAbout } from '../../../../public/typescript/home/data'
+import AboutItemClient from "@/app/components/home/about/About.client"
 
 const AboutHome:React.FC = () => {
     return(
@@ -12,7 +13,8 @@ const AboutHome:React.FC = () => {
                         <TitlePage context={dataAbout} />    
 
                         <div className="w-full">
-                            <ItemAbout/>
+                            <AboutItemClient/>
+                            {/* <ItemAbout/> */}
                         </div>
                     </div>
                 </div>
