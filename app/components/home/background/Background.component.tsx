@@ -40,7 +40,7 @@ const Background: React.FC = () => {
                   alt="background back"
                   fill
                   fetchPriority="high"
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, 475px"
                   className="" //tao bo tron vien cho hinh
                   priority
                 />

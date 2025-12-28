@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ProvidersWrapper from "@/app/ProvidersWrapper.redux";
-import ToastifyComponent from "@/app/components/toast/toast.component";
-import { ThemeProvider } from "next-themes";
+import ClientProviders from "@/app/ClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,19 +29,9 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-black text-black dark:text-white`}
       >
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-          <ProvidersWrapper>
-            {children}
-          </ProvidersWrapper>
-        {/* toast load */}
-        <ToastifyComponent/>
-      </ThemeProvider>
-
+        <ClientProviders>
+          {children}
+        </ClientProviders>
       </body>
     </html>
   );
