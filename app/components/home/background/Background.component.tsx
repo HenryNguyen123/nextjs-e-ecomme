@@ -39,7 +39,7 @@ const Background: React.FC = () => {
                   src="/images/test/backgroundIT.png"
                   alt="background back"
                   fill
-                  className="object-cover rounded-xl"
+                  className="" //tao bo tron vien cho hinh
                   priority
                 />
               </div>
