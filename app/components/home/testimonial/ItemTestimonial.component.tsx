@@ -79,25 +79,25 @@ const TestimonialSlider = () => {
                 <Link href={`#`}>
                     <div className="flex mx-3">
                         <span><FaReact className={`${style.colorIcon} text-5xl dark:text-white`}/></span>
-                        <h1 className="flex items-center ml-3 text-xl lg:text-3xl font-bold"><strong>REACT</strong></h1>
+                        <h1 className="flex items-center ml-3 text-20 lg:text-3xl font-bold"><strong>REACT</strong></h1>
                     </div>
                 </Link>
                 <Link href={`#`}>
                     <div className="flex mx-3">
                         <span><RiNextjsFill className={`${style.colorIcon} text-5xl dark:text-white`}/></span>
-                        <h1 className="flex items-center ml-3  text-xl lg:text-3xl font-bold"><strong>NEXTJS</strong></h1>
+                        <h1 className="flex items-center ml-3  text-20 lg:text-3xl font-bold"><strong>NEXTJS</strong></h1>
                     </div>
                 </Link>
                 <Link href={`#`}>
                     <div className="flex mx-3 mt-5 md:mt-0">
                         <span><SiNestjs className={`${style.colorIcon} text-5xl dark:text-white`}/></span>
-                        <h1 className="flex items-center ml-3  text-xl lg:text-3xl font-bold"><strong>NESTJS</strong></h1>
+                        <h1 className="flex items-center ml-3  text-20 lg:text-3xl font-bold"><strong>NESTJS</strong></h1>
                     </div>
                 </Link>
                 <Link href={`#`}>
                     <div className="flex mx-3 mt-5 md:mt-0">
                         <span><RiTailwindCssFill className={`${style.colorIcon} text-5xl dark:text-white`}/></span>
-                        <h1 className="flex items-center ml-3 text-xl lg:text-3xl font-bold"><strong>TAILWIN</strong></h1>
+                        <h1 className="flex items-center ml-3 text-20 lg:text-3xl font-bold"><strong>TAILWIN</strong></h1>
                     </div>
                 </Link>
             </div>

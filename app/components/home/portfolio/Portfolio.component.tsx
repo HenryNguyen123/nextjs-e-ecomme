@@ -1,7 +1,7 @@
 import TitlePage from "@/app/components/content/page/TitlePage.component"
-// import ItemPortfolio from "@/app/components/home/portfolio/ItemPortfolio.component"
+import ItemPortfolio from "@/app/components/home/portfolio/ItemPortfolio.component"
 import { dataPortpolio } from '../../../../public/typescript/home/data'
-import PorfolioItemClient from "@/app/components/home/portfolio/Portfolio.client"
+// import PorfolioItemClient from "@/app/components/home/portfolio/Portfolio.client"
 
 const PortfolioComponent:React.FC = () => {
 
@@ -14,8 +14,8 @@ const PortfolioComponent:React.FC = () => {
                         <TitlePage context={dataPortpolio} />
 
                         {/* context */}
-                        {/* <ItemPortfolio/> */}
-                        <PorfolioItemClient/>
+                        <ItemPortfolio/>
+                        {/* <PorfolioItemClient/> */}
                     </div>
                 </div>
             </div>

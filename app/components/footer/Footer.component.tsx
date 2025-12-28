@@ -1,8 +1,8 @@
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-// import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
-// import { FaSquareThreads } from "react-icons/fa6";
+import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
+import { FaSquareThreads } from "react-icons/fa6";
 
 const Footer: React.FC = () => {
   return (
@@ -15,13 +15,13 @@ const Footer: React.FC = () => {
           {/* LOGO + DESC */}
           <div className="flex flex-col md:items-center">
             <div className="flex items-center mb-4 lg:justify-center">
-              {/* <Image
+              <Image
                 src="/images/logo/website/logoIndex.png"
                 alt="logo"
                 width={45}
                 height={45}
                 className="mr-2"
-              /> */}
+              />
               <h2 className="text-2xl font-bold dark:text-white">
                 MinhNhat<span className="text-primary">Shop</span>
               </h2>
@@ -32,9 +32,9 @@ const Footer: React.FC = () => {
             </p>
 
             <div className="flex gap-3">
-              {/* <FaFacebook className="text-2xl text-blue-600 cursor-pointer" />
+              <FaFacebook className="text-2xl text-blue-600 cursor-pointer" />
               <FaInstagramSquare className="text-2xl text-rose-400 cursor-pointer" />
-              <FaSquareThreads className="text-2xl cursor-pointer dark:text-white" /> */}
+              <FaSquareThreads className="text-2xl cursor-pointer dark:text-white" />
             </div>
           </div>
 

@@ -19,7 +19,7 @@ const TitlePage:React.FC<ContextType> = ({context}) => {
                 <span className="
                     
                     absolute -top-20 inset-0 flex items-center justify-center
-                    text-5xl font-extrabold uppercase
+                    text-4xl font-extrabold uppercase
                     text-gray-600 text-primary
                     opacity-10
                     transition-all duration-300
