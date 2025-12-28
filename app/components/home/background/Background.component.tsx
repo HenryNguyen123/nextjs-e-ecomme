@@ -39,6 +39,8 @@ const Background: React.FC = () => {
                   src="/images/test/backgroundIT.png"
                   alt="background back"
                   fill
+                  fetchPriority="high"
+                  sizes="100vw"
                   className="" //tao bo tron vien cho hinh
                   priority
                 />
