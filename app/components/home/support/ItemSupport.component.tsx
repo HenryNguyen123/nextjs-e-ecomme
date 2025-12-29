@@ -60,12 +60,6 @@ const ItemSupport:React.FC = () => {
                         Send Message
                     </button>
                 </div>
-
-                <div className="w-full flex mt-10 opacity-70">
-                    <div className="w-full">
-                        <div className="border-t-2 mb-10 opacity-70 w-full"></div>
-                    </div>
-                </div>
             </div>
         </>
     )

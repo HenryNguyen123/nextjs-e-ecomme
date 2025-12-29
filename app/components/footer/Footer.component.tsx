@@ -8,7 +8,13 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full dark:bg-black py-16">
       <div className="max-w-7xl mx-auto px-4">
-        
+
+        {/* line */}
+        <div className="w-full flex mt-10 opacity-70">
+            <div className="w-full">
+                <div className="border-t-2 mb-10 opacity-70 w-full"></div>
+            </div>
+        </div>
         {/* GRID LAYOUT */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           
