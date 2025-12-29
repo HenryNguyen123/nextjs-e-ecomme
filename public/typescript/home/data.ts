@@ -323,7 +323,7 @@ export const itemDataTestimonials = [
 
 // support
 export const dataSupport = {
-    heading: 'Support',
+    heading: 'Contact',
     title: 'Need Any Help? Say hello',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.'
 }

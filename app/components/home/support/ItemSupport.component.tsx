@@ -1,12 +1,28 @@
-const ItemSupport:React.FC = () => {
+'use client'
 
+import { useState } from "react"
+
+
+const ItemSupport:React.FC = () => {
+    const [name, setName] = useState<string>('')
+
+    const handleOnSubmit = () => {
+        alert(name)
+    }
+    
     return(
         <>
             <div className="lg:max-w-7xl w-3/4">
                 <div className="w-full flex mt-5 flex-col md:flex-row">
                     <div className="w-full md:w-1/2">
                         <label htmlFor="fullnameSupport">Your Name</label> <br/>
-                        <input type="text" id="fullnameSupport" placeholder="Full Name" className="w-11/12 mt-2 p-1"/>
+                        <input 
+                            type="text" id="fullnameSupport" 
+                            placeholder="Full Name" 
+                            className="w-11/12 mt-2 p-1"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
                     </div>
                     <div className="w-full md:w-1/2">
                         <label htmlFor="emailSupport">Email Address</label> <br/>
@@ -26,7 +42,28 @@ const ItemSupport:React.FC = () => {
                 <div className="w-full flex mt-5">
                     <div className="w-full">
                         <label htmlFor="MessageSupport">Message</label> <br/>
-                        <textarea id="MessageSupport" placeholder="Type Message" className="h-60 w-full py-5"/>
+                        <textarea id="MessageSupport" placeholder="Type Message" className="h-30 w-full py-5"/>
+                    </div>
+                </div>
+                <div className="w-full flex mt-5">
+                    <div className="w-full cursor-pointer hover:text-blue-600">
+                        <input type="checkbox" id="checkboxed" className="mr-2"/>
+                        <label htmlFor="checkboxed" className="cursor-pointer">I have read the terms of the Service & I accept Privacy Policy.</label> <br/>
+                    </div>
+                </div>
+                <div className="w-full flex mt-5">
+                    <button 
+                        type="submit" 
+                        className="bg-blue-600 text-white text-24 py-2 w-full cursor-pointer hover:opacity-80"
+                        onClick={handleOnSubmit}
+                    >
+                        Send Message
+                    </button>
+                </div>
+
+                <div className="w-full flex mt-10 opacity-70">
+                    <div className="w-full">
+                        <div className="border-t-2 mb-10 opacity-70 w-full"></div>
                     </div>
                 </div>
             </div>
