@@ -1,4 +1,4 @@
-import CallBackMe from "@/app/clients/callback/me/me.component"
+import CallBackMe from "@/app/(auth)/clients/callback/me/me.component"
 import React, { Suspense } from "react"
 
 const Me: React.FC = () => {

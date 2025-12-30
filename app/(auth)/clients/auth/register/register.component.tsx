@@ -5,14 +5,14 @@ import './register.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUnlockKeyhole, faHouse, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import type { AppDispatch} from '../../../redux/stores/stores.redux'
+import type { AppDispatch} from '../../../../redux/stores/stores.redux'
 // import type {RootState, AppDispatch} from '../../../redux/store/store'
 // import { useDispatch, useSelector } from "react-redux";
 import { useDispatch  } from "react-redux";
 // import {loginAuthentication} from '../../../redux/slices/auth/loginSlice'
 // import {setLogin} from '../../../redux/slices//account/userLoginSlice'
 // import type {UserData} from '../../../redux/slices/account/userLoginSlice'
-import {fetchRegister} from '../../../redux/slices/auth/register.slice'
+import {fetchRegister} from '../../../../redux/slices/auth/register.slice'
 
 import { toast } from "react-toastify";
 import Link from "next/link";

@@ -1,4 +1,4 @@
-import ResetPasswordComponent from "@/app/clients/auth/forgot-password/reset-password/ResetPassword.component"
+import ResetPasswordComponent from "@/app/(auth)/clients/auth/forgot-password/reset-password/ResetPassword.component"
 import React, { Suspense } from "react"
 
 const ResetPassword: React.FC = () => {

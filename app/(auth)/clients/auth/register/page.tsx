@@ -1,4 +1,4 @@
-import RegisterComponent from "@/app/clients/auth/register/register.component"
+import RegisterComponent from "@/app/(auth)/clients/auth/register/register.component"
 import React from "react"
 
 const Register: React.FC = () => {

@@ -1,13 +1,13 @@
 'use client'
 import type React from "react";
-import WaitDataComponent from "../../../components/waitLoading/waitPage/Loading.component";
+import WaitDataComponent from "../../../../components/waitLoading/waitPage/Loading.component";
 import { useEffect, useState } from "react";
 
 // get account me
-import type {AppDispatch} from '../../../redux/stores/stores.redux'
-import {fetchAccountGetMe} from '../../../redux/slices/auth/me.slice'
-import {setLogin} from '../../../redux/slices/account/account.slice'
-import type {dataLogin} from '../../../redux/slices/account/account.slice'
+import type {AppDispatch} from '../../../../redux/stores/stores.redux'
+import {fetchAccountGetMe} from '../../../../redux/slices/auth/me.slice'
+import {setLogin} from '../../../../redux/slices/account/account.slice'
+import type {dataLogin} from '../../../../redux/slices/account/account.slice'
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";

@@ -1,7 +1,7 @@
 import BlogHome from "@/app/components/home/blog/Blog.component"
 import React from "react"
 
-const contact: React.FC = () => {
+const BlogPage: React.FC = () => {
 
     return(
         <>
@@ -11,4 +11,4 @@ const contact: React.FC = () => {
         </>
     )
 }
-export default contact
+export default BlogPage

@@ -1,14 +1,14 @@
 import SupportComponent from "@/app/components/home/support/Support.component"
 import React from "react"
 
-const contact: React.FC = () => {
+const ContactPage: React.FC = () => {
 
     return(
         <>
-            <div>
+            <div className="-mt-30 md:mt-0">
                 <SupportComponent/>
             </div>
         </>
     )
 }
-export default contact
+export default ContactPage

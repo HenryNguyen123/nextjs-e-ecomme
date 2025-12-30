@@ -6,9 +6,9 @@ import type React from "react"
 import './forgetPassword.scss'
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import type {AppDispatch} from '../../../../redux/stores/stores.redux'
+import type {AppDispatch} from '../../../../../redux/stores/stores.redux'
 import { useDispatch } from "react-redux";
-import { handelResetPassword } from "../../../../redux/slices/forget-password/resetPassword.slice";
+import { handelResetPassword } from "../../../../../redux/slices/forget-password/resetPassword.slice";
 import { useRouter, useSearchParams } from "next/navigation";
 import Oauth from "@/app/components/oauth/Oauth.component";
 

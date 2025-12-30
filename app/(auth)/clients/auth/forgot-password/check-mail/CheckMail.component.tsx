@@ -6,9 +6,9 @@ import type React from "react"
 import './alertForgot.scss'
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import type {AppDispatch, RootState} from '../../../../redux/stores/stores.redux'
+import type {AppDispatch, RootState} from '../../../../../redux/stores/stores.redux'
 import { useDispatch, useSelector } from "react-redux";
-import { sendMailForgotPassword } from "../../../../redux/slices/forget-password/mailForgetPassword.slice";
+import { sendMailForgotPassword } from "../../../../../redux/slices/forget-password/mailForgetPassword.slice";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Oauth from "@/app/components/oauth/Oauth.component";

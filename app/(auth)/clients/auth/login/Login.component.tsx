@@ -5,12 +5,12 @@ import './login.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUnlockKeyhole, faHouse, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-import type { AppDispatch} from '../../../redux/stores/stores.redux'
+import type { AppDispatch} from '../../../../redux/stores/stores.redux'
 import { useDispatch  } from "react-redux";
 // login basic
-import {loginAuthentication} from '../../../redux/slices/auth/login.slice'
-import {setLogin} from '../../../redux/slices/account/account.slice'
-import type {dataLogin} from '../../../redux/slices/account/account.slice'
+import {loginAuthentication} from '../../../../redux/slices/auth/login.slice'
+import {setLogin} from '../../../../redux/slices/account/account.slice'
+import type {dataLogin} from '../../../../redux/slices/account/account.slice'
 
 import { toast } from "react-toastify";
 import { useRouter  } from "next/navigation";
