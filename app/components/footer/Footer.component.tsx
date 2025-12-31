@@ -19,18 +19,20 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* LOGO + DESC */}
-          <div className="flex flex-col md:items-center">
+          <div className="flex flex-col w-fit">
             <div className="flex items-center mb-4 lg:justify-center">
               <Image
                 src="/images/logo/website/logoIndex.png"
                 alt="logo"
                 width={45}
                 height={45}
-                className="mr-2"
+                className=""
               />
-              <h2 className="text-2xl font-bold dark:text-white">
-                MinhNhat<span className="text-primary">Shop</span>
-              </h2>
+              <h1 className="text-24 font-bold dark:text-white lg:text-xl">
+                <strong>
+                  MinhNhat<span className="text-primary">Shop</span>
+                </strong>
+              </h1>
             </div>
 
             <p className="text-sm  dark:text-gray-300 mb-4">

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react"
-
+import styleForm from '../../../../public/css/form.module.scss'
 
 const ItemSupport:React.FC = () => {
     const [name, setName] = useState<string>('')
@@ -14,35 +14,35 @@ const ItemSupport:React.FC = () => {
         <>
             <div className="lg:max-w-7xl w-3/4">
                 <div className="w-full flex mt-5 flex-col md:flex-row">
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full md:w-1/2 mt-0 md:mt-5">
                         <label htmlFor="fullnameSupport">Your Name</label> <br/>
                         <input 
                             type="text" id="fullnameSupport" 
                             placeholder="Full Name" 
-                            className="w-11/12 mt-2 p-1"
+                            className={`${styleForm.inputNormal} outline-none focus:ring-0 mt-5`}
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
                     </div>
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full md:w-1/2 mt-5">
                         <label htmlFor="emailSupport">Email Address</label> <br/>
-                        <input type="text" id="emailSupport" placeholder="Email Address" className="w-11/12 mt-2"/>
+                        <input type="text" id="emailSupport" placeholder="Email Address" className={`${styleForm.inputNormal} outline-none focus:ring-0 mt-5`}/>
                     </div>
                 </div>
                 <div className="w-full flex mt-5 flex-col md:flex-row">
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full md:w-1/2 mt-5">
                         <label htmlFor="phoneSupport">Phone (Optional)</label> <br/>
-                        <input type="number" id="phoneSupport" placeholder="Phone number" className="w-11/12 mt-2"/>
+                        <input type="number" id="phoneSupport" placeholder="Phone number" className={`${styleForm.inputNormal} outline-none focus:ring-0 mt-5`}/>
                     </div>
-                    <div className="w-full md:w-1/2">
+                    <div className="w-full md:w-1/2 mt-5">
                         <label htmlFor="subjectSupport">Subject</label> <br/>
-                        <input type="text" id="subjectSupport" placeholder="Type Subject" className="w-11/12 mt-2"/>
+                        <input type="text" id="subjectSupport" placeholder="Type Subject" className={`${styleForm.inputNormal} outline-none focus:ring-0 mt-5`}/>
                     </div>
                 </div>
                 <div className="w-full flex mt-5">
-                    <div className="w-full">
+                    <div className="w-full mt-5">
                         <label htmlFor="MessageSupport">Message</label> <br/>
-                        <textarea id="MessageSupport" placeholder="Type Message" className="h-30 w-full py-5"/>
+                        <textarea id="MessageSupport" placeholder="Type Message" className={`${styleForm.inputNormal} outline-none focus:ring-0 mt-5 h-30`}/>
                     </div>
                 </div>
                 <div className="w-full flex mt-5">
