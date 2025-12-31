@@ -17,3 +17,16 @@
 :global(html.dark) .colorIcon{
   color: var(--color-white);
 }
+
+.buttonBg {
+  cursor: pointer;
+  padding: 15px 20px;
+  background-color: #9ca3af;
+  opacity: 0.61;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

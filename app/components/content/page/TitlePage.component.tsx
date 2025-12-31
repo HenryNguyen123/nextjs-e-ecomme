@@ -18,7 +18,7 @@ const TitlePage:React.FC<ContextType> = ({context}) => {
                 </h1>
                 <span className="
                     absolute -top-20 inset-0 flex items-center justify-center
-                    text-4xl font-extrabold uppercase
+                    text-5xl font-extrabold uppercase
                     text-gray-600 text-primary
                     opacity-10
                     transition-all duration-300
@@ -33,7 +33,7 @@ const TitlePage:React.FC<ContextType> = ({context}) => {
               <h2 className="sr-only">
                 {context.desc}
               </h2>
-              <p className="text-gray-600 mt-5">
+              <p className="opacity-80 mt-5">
                 {context.desc}
               </p>
             </div>

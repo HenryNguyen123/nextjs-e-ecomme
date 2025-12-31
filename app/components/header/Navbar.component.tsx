@@ -100,7 +100,7 @@ export default function NavbarComponent() {
               <strong>MinhNhatShop</strong>
             </p>
           </Link>
-          <div className="flex ml-5">
+          <div className="hidden md:flex flex-1 justify-center  ml-5">
             <div className="flex items-center ml-5 text-24 opacity-80 hover:text-blue-600 ">
               <Link href={`/blog`}>Blogs</Link>
             </div>

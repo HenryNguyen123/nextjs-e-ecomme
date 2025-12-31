@@ -51,10 +51,10 @@ const TestimonialSlider = () => {
 
                 {/* Buttons */}
                 <div className="absolute top-1/2 -translate-y-1/2 left-2">
-                <button onClick={prev} className="buttonBg cursor-pointer"><FaChevronLeft/></button>
+                <button onClick={prev} className={style.buttonBg}><FaChevronLeft/></button>
                 </div>
                 <div className="absolute top-1/2 -translate-y-1/2 right-2">
-                <button onClick={next} className="buttonBg cursor-pointer"><FaChevronRight/></button>
+                <button onClick={next} className={style.buttonBg}><FaChevronRight/></button>
                 </div>
             </div>
         </div>

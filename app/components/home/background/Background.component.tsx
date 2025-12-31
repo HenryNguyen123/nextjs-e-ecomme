@@ -1,5 +1,6 @@
 import Image from "next/image";
 import style from "./backgroundCss.module.scss";
+import styleButton from "../../../../public/css/button.module.scss";
 
 const Background: React.FC = () => {
   return (
@@ -25,7 +26,7 @@ const Background: React.FC = () => {
               project.
             </p>
 
-            <button className="text-2xl loginItem">
+            <button className={`${styleButton.buttonPrimary} text-2xl`}>
               Click me now
             </button>
           </div>

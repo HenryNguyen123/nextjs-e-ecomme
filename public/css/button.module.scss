@@ -1,0 +1,50 @@
+.buttonPrimary{
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: 1px solid #4A6CF7;
+    background-color: #4A6CF7;
+    border-radius: 10px; 
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(206, 10, 10, 0.2);
+      color: #fff;
+      scale: 1.05;
+      transition: all 0.25s ease;
+    }
+}
+ /* .loginItem {
+    
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: 1px solid #4A6CF7;
+    background-color: #4A6CF7;
+    border-radius: 10px; 
+    cursor: pointer;
+  }
+  .loginItem:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(206, 10, 10, 0.2);
+    color: #fff;
+    scale: 1.05;
+    transition: all 0.25s ease;
+  } */
+  /* button O */
+  /* .buttonBg {
+    padding: 15px 20px;
+    background-color: #9ca3af;
+    opacity: 0.81;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  } */
+
+  /* .buttonBg:hover {
+    opacity: 1;
+    transform: scale(1.2);
+  } */

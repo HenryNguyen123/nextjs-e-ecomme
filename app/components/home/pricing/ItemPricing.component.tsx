@@ -1,4 +1,5 @@
 import style from './pricing.module.scss'
+import styleButton from '../../../../public/css/button.module.scss'
 import { TiTick } from "react-icons/ti";
 import { FaArrowRight } from "react-icons/fa";
 import { itemDataPricing } from '../../../../public/typescript/home/data'
@@ -38,7 +39,7 @@ const ItemPricing:React.FC = () =>  {
                                   ))
                               }
                               <div className="mt-10 flex justify-center">
-                                  <button className="loginItem flex">
+                                  <button className={`${styleButton.buttonPrimary} flex`}>
                                       <span>Join This Plan</span>
                                       <span className="flex items-center ml-2"><FaArrowRight/></span>
                                   </button>

@@ -9,6 +9,7 @@
   );
   background-size: 400% 400%;
   animation: gradientShift 12s ease-in-out infinite;
+  z-index: 999;
 }
 
 /*  Dark mode */
@@ -20,6 +21,7 @@
     #484646,
     #1d1c1c
   );
+  z-index: 999;
 }
 // :global(html.dark) .textBlackDark {
 //     color: #fff;
