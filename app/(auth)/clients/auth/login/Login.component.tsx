@@ -13,7 +13,7 @@ import {setLogin} from '../../../../redux/slices/account/account.slice'
 import type {dataLogin} from '../../../../redux/slices/account/account.slice'
 
 import { toast } from "react-toastify";
-import { useRouter  } from "next/navigation";
+import { notFound, useRouter  } from "next/navigation";
 import Link from "next/link";
 import Oauth from "@/app/components/oauth/Oauth.component";
 
@@ -80,7 +80,7 @@ const LoginComponent: React.FC = () => {
 
     const handleClickLogin = async () => {
         const check  = HandleCheckValid()
-        if (!check) return
+        if (!check) return 
         const data = await dispatch(loginAuthentication({userName, password, rememberUser})).unwrap()
         const {EM, EC, DT} = data
         if (EC === 0 && DT) {

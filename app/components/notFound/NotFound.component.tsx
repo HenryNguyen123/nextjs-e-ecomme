@@ -2,7 +2,7 @@ import TitlePage from "@/app/components/content/page/TitlePage.component"
 import {dataNotPound} from '../../../public/typescript/notPoundPage/data'
 import styleButton from '../../../public/css/button.module.scss'
 import Link from "next/link"
-const NotPound:React.FC = () => {
+const NotFoundComponent:React.FC = () => {
 
     return(
         <>
@@ -31,4 +31,4 @@ const NotPound:React.FC = () => {
         </>
     )
 }
-export default NotPound
+export default NotFoundComponent
