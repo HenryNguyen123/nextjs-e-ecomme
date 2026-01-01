@@ -17,7 +17,7 @@ import {fetchRegister} from '../../../../redux/slices/auth/register.slice'
 import { toast } from "react-toastify";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Oauth from "@/app/components/oauth/Oauth.component";
+import Oauth from "@/app/components/(client)/oauth/Oauth.component";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
  

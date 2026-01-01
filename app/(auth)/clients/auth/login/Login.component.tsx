@@ -15,7 +15,7 @@ import type {dataLogin} from '../../../../redux/slices/account/account.slice'
 import { toast } from "react-toastify";
 import { notFound, useRouter  } from "next/navigation";
 import Link from "next/link";
-import Oauth from "@/app/components/oauth/Oauth.component";
+import Oauth from "@/app/components/(client)/oauth/Oauth.component";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
  

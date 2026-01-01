@@ -1,4 +1,4 @@
-import SupportComponent from "@/app/components/home/support/Support.component"
+import SupportComponent from "@/app/components/(client)/home/support/Support.component"
 import React from "react"
 
 const ContactPage: React.FC = () => {

@@ -10,7 +10,7 @@ import type {AppDispatch} from '../../../../../redux/stores/stores.redux'
 import { useDispatch } from "react-redux";
 import { handelResetPassword } from "../../../../../redux/slices/forget-password/resetPassword.slice";
 import { useRouter, useSearchParams } from "next/navigation";
-import Oauth from "@/app/components/oauth/Oauth.component";
+import Oauth from "@/app/components/(client)/oauth/Oauth.component";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
 interface validType {

@@ -1,6 +1,6 @@
 'use client'
 import type React from "react";
-import WaitDataComponent from "../../../../components/waitLoading/waitPage/Loading.component";
+import WaitDataComponent from "../../../../components/(client)/waitLoading/waitPage/Loading.component";
 import { useEffect, useState } from "react";
 
 // get account me

@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { sendMailForgotPassword } from "../../../../../redux/slices/forget-password/mailForgetPassword.slice";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Oauth from "@/app/components/oauth/Oauth.component";
+import Oauth from "@/app/components/(client)/oauth/Oauth.component";
 
 type eventHtml = React.ChangeEvent<HTMLInputElement>
 interface validType {

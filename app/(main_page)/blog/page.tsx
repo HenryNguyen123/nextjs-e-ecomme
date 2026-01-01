@@ -1,4 +1,4 @@
-import BlogHome from "@/app/components/home/blog/Blog.component"
+import BlogHome from "@/app/components/(client)/home/blog/Blog.component"
 import React from "react"
 
 const BlogPage: React.FC = () => {
